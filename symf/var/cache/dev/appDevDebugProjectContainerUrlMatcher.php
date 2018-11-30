@@ -118,6 +118,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'FrontOfficeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'front_office_homepage',);
         }
 
+        // profil
+        if ($pathinfo === '/profil') {
+            return array (  '_controller' => 'FrontOfficeBundle\\Controller\\DefaultController::profilAction',  '_route' => 'profil',);
+        }
+
+        // nouveauTrajet
+        if ($pathinfo === '/nouveau-trajet') {
+            return array (  '_controller' => 'FrontOfficeBundle\\Controller\\DefaultController::nouveauTrajetAction',  '_route' => 'nouveauTrajet',);
+        }
+
         // back_office_homepage
         if (rtrim($pathinfo, '/') === '/admindep') {
             if (substr($pathinfo, -1) !== '/') {
@@ -128,11 +138,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
-            }
-
+        if ($pathinfo === '/home') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 

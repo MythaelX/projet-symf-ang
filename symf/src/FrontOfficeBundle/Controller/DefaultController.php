@@ -10,4 +10,14 @@ class DefaultController extends Controller
     {
         return $this->render('FrontOfficeBundle:Default:index.html.twig');
     }
+    
+    public function profilAction()
+    {
+        return $this->render('FrontOfficeBundle:Default:profil.html.twig');
+    }
+    
+    public function nouveauTrajetAction()
+    {
+        return $this->render('FrontOfficeBundle:Default:formulaire-trajet.html.twig');
+    }
 }

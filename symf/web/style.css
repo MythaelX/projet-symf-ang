@@ -1,15 +1,3 @@
-h1{
-  background-color: #555;
-}
-
-
-li:nth-child(even){background-color: #f2f2f2}
-
-ul {
-    background-color: #4CAF50;
-    color: black;
-}
-
 ul {
     list-style-type: none;
     margin: 0;

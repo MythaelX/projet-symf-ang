@@ -5,3 +5,7 @@
 81f622,127.0.0.1,GET,http://127.0.0.1:8000/,1543590222,e3de4f,200
 e3de4f,127.0.0.1,GET,http://127.0.0.1:8000/,1543590222,,500
 ab6110,127.0.0.1,GET,http://127.0.0.1:8000/api/,1543590239,,200
+efe3d1,127.0.0.1,GET,http://localhost:8000/profil,1543593285,29b91b,200
+29b91b,127.0.0.1,GET,http://localhost:8000/profil,1543593285,,500
+2f6ad6,127.0.0.1,GET,http://localhost:8000/nouveau-trajet,1543593296,122d35,200
+122d35,127.0.0.1,GET,http://localhost:8000/nouveau-trajet,1543593296,,500

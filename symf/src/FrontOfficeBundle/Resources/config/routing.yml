@@ -1,3 +1,9 @@
 front_office_homepage:
     path:     /
     defaults: { _controller: FrontOfficeBundle:Default:index }
+profil:
+    path:     /profil
+    defaults: { _controller: FrontOfficeBundle:Default:profil }
+nouveauTrajet:
+    path:     /nouveau-trajet
+    defaults: { _controller: FrontOfficeBundle:Default:nouveauTrajet }
