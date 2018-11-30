@@ -9,3 +9,8 @@ back_office:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    
+back_office_homepafge:
+    path:     /admindep
+    defaults: 
+     _controller: BackOfficeBundle:Default:index
