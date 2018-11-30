@@ -1,6 +1,10 @@
+body{
+margin:0;
+}
 ul {
     list-style-type: none;
     margin: 0;
+    margin-bottom:3%;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -20,4 +24,31 @@ li a {
 
 li a:hover {
     background-color: #111;
+}
+div#tableau{
+margin-top:5%;
+margin-right:10%;
+margin-left:10%;
+}
+table {
+    margin-top:1%;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+span#bienvenue{
+    margin-left:3%;
+    text-align:center;
 }
