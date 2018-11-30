@@ -1,0 +1,16 @@
+BackOfficeBundle\Entity\Type_user:
+    type: entity
+    table: null
+    repositoryClass: BackOfficeBundle\Repository\Type_userRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        typeUser:
+            type: string
+            length: 255
+            column: type_user
+    lifecycleCallbacks: {  }

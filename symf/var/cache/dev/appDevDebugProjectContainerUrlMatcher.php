@@ -100,6 +100,15 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // webservice_homepage
+        if (rtrim($pathinfo, '/') === '/api') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'webservice_homepage');
+            }
+
+            return array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::indexAction',  '_route' => 'webservice_homepage',);
+        }
+
         // front_office_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

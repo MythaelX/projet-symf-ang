@@ -1,0 +1,18 @@
+BackOfficeBundle\Entity\Societe:
+    type: entity
+    table: null
+    repositoryClass: BackOfficeBundle\Repository\SocieteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        societe:
+            type: string
+            length: 255
+        adresse:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

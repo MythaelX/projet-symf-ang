@@ -1,3 +1,7 @@
+webservice:
+    resource: "@webserviceBundle/Resources/config/routing.yml"
+    prefix:   /api
+
 front_office:
     resource: "@FrontOfficeBundle/Resources/config/routing.yml"
     prefix:   /

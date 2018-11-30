@@ -1,0 +1,25 @@
+BackOfficeBundle\Entity\Deplacement_jour:
+    type: entity
+    table: null
+    repositoryClass: BackOfficeBundle\Repository\Deplacement_jourRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nbKm:
+            type: bigint
+            column: nb_km
+        montant:
+            type: bigint
+        jour:
+            type: integer
+        date:
+            type: date
+        created:
+            type: datetime
+        updated:
+            type: datetime
+    lifecycleCallbacks: {  }

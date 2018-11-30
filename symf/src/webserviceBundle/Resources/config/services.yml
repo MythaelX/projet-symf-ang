@@ -1,0 +1,4 @@
+services:
+#    webservice.example:
+#        class: webserviceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
