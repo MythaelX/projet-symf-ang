@@ -3,6 +3,7 @@
 namespace webserviceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
@@ -12,13 +13,10 @@ class DefaultController extends Controller
         return $this->render('webserviceBundle:Default:index.html.twig');
     }
 
-    public function listRestAction(Request $request)
+    public function listDeplacementsRestAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        //recuperation de la liste des internaute au travers du repository     
-        $internautes = $em->getRepository('BackOfficeBundle:Internaute')->findByInternauteOrderedRest();
-        return new JsonResponse([
-            $internautes            
-        ]);
+        $deplacements = $em->getRepository('BackOfficeBundle:Deplacement')->findByAllDeplacementsRest();
+        return new JsonResponse([$deplacements]);
     }
 }
