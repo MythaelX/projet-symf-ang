@@ -1,0 +1,15 @@
+BackOfficeBundle\Entity\Service:
+    type: entity
+    table: null
+    repositoryClass: BackOfficeBundle\Repository\ServiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        service:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

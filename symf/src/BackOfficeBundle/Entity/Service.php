@@ -3,9 +3,9 @@
 namespace BackOfficeBundle\Entity;
 
 /**
- * service
+ * Service
  */
-class service
+class Service
 {
     /**
      * @var int
@@ -33,7 +33,7 @@ class service
      *
      * @param string $service
      *
-     * @return service
+     * @return Service
      */
     public function setService($service)
     {
