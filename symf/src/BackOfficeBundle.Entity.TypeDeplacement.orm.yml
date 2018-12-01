@@ -1,0 +1,29 @@
+BackOfficeBundle\Entity\TypeDeplacement:
+    type: entity
+    table: type_deplacement
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        typeDeplacement:
+            type: string
+            length: 45
+            nullable: true
+            options:
+                fixed: ''
+            column: type_deplacement
+        montant:
+            type: float
+            precision: 10
+            scale: 0
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

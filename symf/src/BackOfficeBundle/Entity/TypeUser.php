@@ -5,19 +5,19 @@ namespace BackOfficeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Service
+ * TypeUser
  *
- * @ORM\Table(name="service")
+ * @ORM\Table(name="type_user")
  * @ORM\Entity
  */
-class Service
+class TypeUser
 {
     /**
      * @var string
      *
-     * @ORM\Column(name="service", type="string", length=45, nullable=true)
+     * @ORM\Column(name="type_user", type="string", length=45, nullable=true)
      */
-    private $service;
+    private $typeUser;
 
     /**
      * @var integer
@@ -31,27 +31,27 @@ class Service
 
 
     /**
-     * Set service
+     * Set typeUser
      *
-     * @param string $service
+     * @param string $typeUser
      *
-     * @return Service
+     * @return TypeUser
      */
-    public function setService($service)
+    public function setTypeUser($typeUser)
     {
-        $this->service = $service;
+        $this->typeUser = $typeUser;
 
         return $this;
     }
 
     /**
-     * Get service
+     * Get typeUser
      *
      * @return string
      */
-    public function getService()
+    public function getTypeUser()
     {
-        return $this->service;
+        return $this->typeUser;
     }
 
     /**

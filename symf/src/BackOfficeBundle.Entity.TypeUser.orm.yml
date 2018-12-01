@@ -1,0 +1,18 @@
+BackOfficeBundle\Entity\TypeUser:
+    type: entity
+    table: type_user
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        typeUser:
+            type: string
+            length: 45
+            nullable: true
+            options:
+                fixed: ''
+            column: type_user
+    lifecycleCallbacks: {  }

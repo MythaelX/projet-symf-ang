@@ -2,56 +2,88 @@
 
 namespace BackOfficeBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Deplacement
+ *
+ * @ORM\Table(name="deplacement", indexes={@ORM\Index(name="fk_deplacement_user1_idx", columns={"user_id"}), @ORM\Index(name="fk_deplacement_user2_idx", columns={"user_id1"})})
+ * @ORM\Entity
  */
 class Deplacement
 {
     /**
-     * @var int
-     */
-    private $id;
-
-    /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="annee", type="integer", nullable=true)
      */
     private $annee;
 
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="mois", type="integer", nullable=true)
      */
     private $mois;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="date_validation", type="date", nullable=true)
      */
     private $dateValidation;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=true)
      */
     private $created;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="updated", type="datetime", nullable=true)
      */
     private $updated;
 
     /**
-     * @var int
+     * @var boolean
+     *
+     * @ORM\Column(name="validation", type="boolean", nullable=true)
      */
     private $validation;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
-     * Get id
+     * @var \BackOfficeBundle\Entity\User
      *
-     * @return int
+     * @ORM\ManyToOne(targetEntity="BackOfficeBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $user;
+
+    /**
+     * @var \BackOfficeBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="BackOfficeBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id1", referencedColumnName="id")
+     * })
+     */
+    private $user1;
+
+
 
     /**
      * Set annee
@@ -70,7 +102,7 @@ class Deplacement
     /**
      * Get annee
      *
-     * @return int
+     * @return integer
      */
     public function getAnnee()
     {
@@ -94,7 +126,7 @@ class Deplacement
     /**
      * Get mois
      *
-     * @return int
+     * @return integer
      */
     public function getMois()
     {
@@ -176,7 +208,7 @@ class Deplacement
     /**
      * Set validation
      *
-     * @param integer $validation
+     * @param boolean $validation
      *
      * @return Deplacement
      */
@@ -190,11 +222,68 @@ class Deplacement
     /**
      * Get validation
      *
-     * @return int
+     * @return boolean
      */
     public function getValidation()
     {
         return $this->validation;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \BackOfficeBundle\Entity\User $user
+     *
+     * @return Deplacement
+     */
+    public function setUser(\BackOfficeBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \BackOfficeBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set user1
+     *
+     * @param \BackOfficeBundle\Entity\User $user1
+     *
+     * @return Deplacement
+     */
+    public function setUser1(\BackOfficeBundle\Entity\User $user1 = null)
+    {
+        $this->user1 = $user1;
+
+        return $this;
+    }
+
+    /**
+     * Get user1
+     *
+     * @return \BackOfficeBundle\Entity\User
+     */
+    public function getUser1()
+    {
+        return $this->user1;
+    }
+}

@@ -1,0 +1,64 @@
+BackOfficeBundle\Entity\DeplacementJour:
+    type: entity
+    table: deplacement_jour
+    indexes:
+        fk_deplacement_jour_type_deplacement1_idx:
+            columns:
+                - type_deplacement_id
+        fk_deplacement_jour_deplacement1_idx:
+            columns:
+                - deplacement_id
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        nbKm:
+            type: float
+            precision: 10
+            scale: 0
+            nullable: true
+            column: nb_km
+        montant:
+            type: float
+            precision: 10
+            scale: 0
+            nullable: true
+        jour:
+            type: integer
+            nullable: true
+            options:
+                unsigned: ''
+        date:
+            type: date
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    manyToOne:
+        deplacement:
+            targetEntity: BackOfficeBundle\Entity\Deplacement
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                deplacement_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        typeDeplacement:
+            targetEntity: BackOfficeBundle\Entity\TypeDeplacement
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type_deplacement_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

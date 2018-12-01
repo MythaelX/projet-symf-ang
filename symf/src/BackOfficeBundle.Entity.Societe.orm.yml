@@ -1,0 +1,38 @@
+BackOfficeBundle\Entity\Societe:
+    type: entity
+    table: societe
+    indexes:
+        fk_societe_ville1_idx:
+            columns:
+                - ville_id
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        societe:
+            type: string
+            length: 45
+            nullable: true
+            options:
+                fixed: ''
+        adresse:
+            type: string
+            length: 255
+            nullable: true
+            options:
+                fixed: ''
+    manyToOne:
+        ville:
+            targetEntity: BackOfficeBundle\Entity\Ville
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ville_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+BackOfficeBundle\Entity\Ville:
+    type: entity
+    table: ville
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        ville:
+            type: string
+            length: 100
+            nullable: true
+            options:
+                fixed: ''
+        cp:
+            type: string
+            length: 5
+            nullable: true
+            options:
+                fixed: ''
+    lifecycleCallbacks: {  }

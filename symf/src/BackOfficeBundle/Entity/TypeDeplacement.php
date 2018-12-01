@@ -2,53 +2,61 @@
 
 namespace BackOfficeBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Type_deplacement
+ * TypeDeplacement
+ *
+ * @ORM\Table(name="type_deplacement")
+ * @ORM\Entity
  */
-class Type_deplacement
+class TypeDeplacement
 {
     /**
-     * @var int
-     */
-    private $id;
-
-    /**
      * @var string
+     *
+     * @ORM\Column(name="type_deplacement", type="string", length=45, nullable=true)
      */
     private $typeDeplacement;
 
     /**
-     * @var int
+     * @var float
+     *
+     * @ORM\Column(name="montant", type="float", precision=10, scale=0, nullable=true)
      */
     private $montant;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=true)
      */
     private $created;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="updated", type="datetime", nullable=true)
      */
     private $updated;
 
-
     /**
-     * Get id
+     * @var integer
      *
-     * @return int
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
+
 
     /**
      * Set typeDeplacement
      *
      * @param string $typeDeplacement
      *
-     * @return Type_deplacement
+     * @return TypeDeplacement
      */
     public function setTypeDeplacement($typeDeplacement)
     {
@@ -70,9 +78,9 @@ class Type_deplacement
     /**
      * Set montant
      *
-     * @param integer $montant
+     * @param float $montant
      *
-     * @return Type_deplacement
+     * @return TypeDeplacement
      */
     public function setMontant($montant)
     {
@@ -84,7 +92,7 @@ class Type_deplacement
     /**
      * Get montant
      *
-     * @return int
+     * @return float
      */
     public function getMontant()
     {
@@ -96,7 +104,7 @@ class Type_deplacement
      *
      * @param \DateTime $created
      *
-     * @return Type_deplacement
+     * @return TypeDeplacement
      */
     public function setCreated($created)
     {
@@ -120,7 +128,7 @@ class Type_deplacement
      *
      * @param \DateTime $updated
      *
-     * @return Type_deplacement
+     * @return TypeDeplacement
      */
     public function setUpdated($updated)
     {
@@ -138,5 +146,14 @@ class Type_deplacement
     {
         return $this->updated;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
