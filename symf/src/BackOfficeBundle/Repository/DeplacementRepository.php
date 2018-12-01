@@ -11,7 +11,7 @@ namespace BackOfficeBundle\Repository;
 class DeplacementRepository extends \Doctrine\ORM\EntityRepository{
 
   public function findByAllDeplacementsRest(){
-    return $this->getEntityManager()->createQuery('SELECT * FROM BackOfficeBundle:Deplacement')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+    return $this->getEntityManager()->createQuery('SELECT i FROM BackOfficeBundle:Deplacement i')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
   }
-  
+
 }
