@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * DeplacementJour
  *
  * @ORM\Table(name="deplacement_jour", indexes={@ORM\Index(name="fk_deplacement_jour_type_deplacement1_idx", columns={"type_deplacement_id"}), @ORM\Index(name="fk_deplacement_jour_deplacement1_idx", columns={"deplacement_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="BackOfficeBundle\Repository\Deplacement_jourRepository")
  */
 class DeplacementJour
 {

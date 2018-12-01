@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Service
  *
  * @ORM\Table(name="service")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="BackOfficeBundle\Repository\ServiceRepository")
  */
 class Service
 {
@@ -30,4 +30,3 @@ class Service
 
 
 }
-
