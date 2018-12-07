@@ -21,20 +21,20 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_20d2895c652f02b6f7ccc61aba61eb98f2788a8bcedbd69f791cf5de3bf5ddfd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_20d2895c652f02b6f7ccc61aba61eb98f2788a8bcedbd69f791cf5de3bf5ddfd->enter($__internal_20d2895c652f02b6f7ccc61aba61eb98f2788a8bcedbd69f791cf5de3bf5ddfd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:index.html.twig"));
+        $__internal_551f719856e65ee1c4bdfefdc6a097717824126932abe3deee3a57d3c176b2e2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_551f719856e65ee1c4bdfefdc6a097717824126932abe3deee3a57d3c176b2e2->enter($__internal_551f719856e65ee1c4bdfefdc6a097717824126932abe3deee3a57d3c176b2e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_20d2895c652f02b6f7ccc61aba61eb98f2788a8bcedbd69f791cf5de3bf5ddfd->leave($__internal_20d2895c652f02b6f7ccc61aba61eb98f2788a8bcedbd69f791cf5de3bf5ddfd_prof);
+        $__internal_551f719856e65ee1c4bdfefdc6a097717824126932abe3deee3a57d3c176b2e2->leave($__internal_551f719856e65ee1c4bdfefdc6a097717824126932abe3deee3a57d3c176b2e2_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d00c0f6f4c209ddcbefcb4bf486e569752bb9d34c8405be5535c3cc380f5204d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d00c0f6f4c209ddcbefcb4bf486e569752bb9d34c8405be5535c3cc380f5204d->enter($__internal_d00c0f6f4c209ddcbefcb4bf486e569752bb9d34c8405be5535c3cc380f5204d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a4ae440fc84d9c1c559fb6bcb1d19a8aabaf02d785170983166e553b3475a32a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a4ae440fc84d9c1c559fb6bcb1d19a8aabaf02d785170983166e553b3475a32a->enter($__internal_a4ae440fc84d9c1c559fb6bcb1d19a8aabaf02d785170983166e553b3475a32a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "  <span id=\"bienvenue\">Bienvenue ! ";
@@ -47,28 +47,23 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
 
   <table>
     <tr>
-      <th>nb de km</th>
-      <th>montant</th>
-      <th>jour</th>
+      <th>Annee</th>
+      <th>Mois</th>
     </tr>
     ";
-        // line 13
+        // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["deplacements"] ?? $this->getContext($context, "deplacements")));
         foreach ($context['_seq'] as $context["_key"] => $context["instance"]) {
-            // line 14
+            // line 13
             echo "    <tr>
         <td>";
+            // line 14
+            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "annee", array()), "html", null, true);
+            echo "</td>
+        <td>";
             // line 15
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "nbkm", array()), "html", null, true);
-            echo "</td>
-        <td>";
-            // line 16
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "montant", array()), "html", null, true);
-            echo "</td>
-        <td>";
-            // line 17
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "jour", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "mois", array()), "html", null, true);
             echo "</td>
     </tr>
     ";
@@ -76,12 +71,12 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 18
         echo "</table>
 </div>
 ";
         
-        $__internal_d00c0f6f4c209ddcbefcb4bf486e569752bb9d34c8405be5535c3cc380f5204d->leave($__internal_d00c0f6f4c209ddcbefcb4bf486e569752bb9d34c8405be5535c3cc380f5204d_prof);
+        $__internal_a4ae440fc84d9c1c559fb6bcb1d19a8aabaf02d785170983166e553b3475a32a->leave($__internal_a4ae440fc84d9c1c559fb6bcb1d19a8aabaf02d785170983166e553b3475a32a_prof);
 
     }
 
@@ -97,7 +92,7 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
 
     public function getDebugInfo()
     {
-        return array (  80 => 20,  71 => 17,  67 => 16,  63 => 15,  60 => 14,  56 => 13,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  75 => 18,  66 => 15,  62 => 14,  59 => 13,  55 => 12,  40 => 3,  34 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -118,15 +113,13 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
 
   <table>
     <tr>
-      <th>nb de km</th>
-      <th>montant</th>
-      <th>jour</th>
+      <th>Annee</th>
+      <th>Mois</th>
     </tr>
     {% for instance in deplacements %}
     <tr>
-        <td>{{ instance.nbkm }}</td>
-        <td>{{ instance.montant }}</td>
-        <td>{{ instance.jour }}</td>
+        <td>{{ instance.annee }}</td>
+        <td>{{ instance.mois }}</td>
     </tr>
     {% endfor %}
 </table>

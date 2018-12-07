@@ -354,4 +354,9 @@ class User
     {
         return $this->ville;
     }
+
+    public function __toString()
+    {
+      return $this->nom;
+    }
 }

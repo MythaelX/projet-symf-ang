@@ -1,3 +1,13 @@
+back_office_deplacement:
+    resource: "@BackOfficeBundle/Resources/config/routing/deplacement.yml"
+    prefix:   /deplacement
+
 back_office_homepage:
     path: /
     defaults: { _controller: BackOfficeBundle:Default:index }
+back_office_service:
+        resource: "@BackOfficeBundle/Resources/config/routing/service.yml"
+        prefix:   /service
+back_office_societe:
+        resource: "@BackOfficeBundle/Resources/config/routing/societe.yml"
+        prefix:   /societe

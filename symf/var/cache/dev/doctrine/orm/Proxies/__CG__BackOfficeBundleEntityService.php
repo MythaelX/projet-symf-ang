@@ -210,4 +210,15 @@ class Service extends \BackOfficeBundle\Entity\Service implements \Doctrine\ORM\
         return parent::getId();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

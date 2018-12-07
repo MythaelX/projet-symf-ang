@@ -13,7 +13,7 @@ class DefaultController extends Controller
     {
         $id=2;
         $utilisateur=$this->getDoctrine()->getRepository('BackOfficeBundle:User')->findById($id)[0];
-        $deplacements=$this->getDoctrine()->getRepository('BackOfficeBundle:DeplacementJour')->findAll();
+        $deplacements=$this->getDoctrine()->getRepository('BackOfficeBundle:Deplacement')->findAll();
         return $this->render('FrontOfficeBundle:Default:index.html.twig', array('utilisateur' => $utilisateur , 'deplacements' => $deplacements));
     }
 
@@ -43,6 +43,9 @@ class DefaultController extends Controller
         ->add('prenom',TextType::class)
         ->add('adresse',TextType::class)
         ->add('ville',TextType::class)
+        ->add('distance_init',TextType::class)
+        ->add('service',TextType::class)
+        ->add('societe',TextType::class)
         ->getForm();
         return $this->render('FrontOfficeBundle:Default:formulaire-trajet.html.twig',array('form' => $form->createView()));
     }

@@ -6,15 +6,13 @@
 
   <table>
     <tr>
-      <th>nb de km</th>
-      <th>montant</th>
-      <th>jour</th>
+      <th>Annee</th>
+      <th>Mois</th>
     </tr>
     {% for instance in deplacements %}
     <tr>
-        <td>{{ instance.nbkm }}</td>
-        <td>{{ instance.montant }}</td>
-        <td>{{ instance.jour }}</td>
+        <td>{{ instance.annee }}</td>
+        <td>{{ instance.mois }}</td>
     </tr>
     {% endfor %}
 </table>

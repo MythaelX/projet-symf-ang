@@ -408,4 +408,15 @@ class User extends \BackOfficeBundle\Entity\User implements \Doctrine\ORM\Proxy\
         return parent::getVille();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }
