@@ -10,8 +10,12 @@ namespace BackOfficeBundle\Repository;
  */
 class DeplacementRepository extends \Doctrine\ORM\EntityRepository{
 
-  public function findByAllDeplacementsRest(){
+  public function AllDeplacementsRest(){
     return $this->getEntityManager()->createQuery('SELECT i FROM BackOfficeBundle:Deplacement i')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
   }
-
+/*
+  public function OneDeplacementRest(){
+    return $this->getEntityManager()->createQuery('SELECT i FROM BackOfficeBundle:Deplacement i')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+  }
+*/
 }
