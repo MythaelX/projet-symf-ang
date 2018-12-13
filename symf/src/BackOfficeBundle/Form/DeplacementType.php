@@ -13,9 +13,9 @@ class DeplacementType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('annee')->add('mois')->add('dateValidation')->add('created')->add('updated')->add('validation')->add('user')->add('user1')        ;
+        $builder->add('annee')->add('mois');
     }
-    
+
     /**
      * {@inheritdoc}
      */

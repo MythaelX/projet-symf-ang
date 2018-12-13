@@ -4,6 +4,8 @@ namespace FrontOfficeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BackOfficeBundle\Entity\User;
+use BackOfficeBundle\Entity\Deplacement;
+use BackOfficeBundle\Entity\DeplacementJour;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -34,19 +36,44 @@ class DefaultController extends Controller
       return $this->render('FrontOfficeBundle:Default:profil.html.twig',array('form' => $form->createView()));
     }
 
-    public function nouveauTrajetAction()
+    public function nouveauTrajetAction(Request $request)
     {
-        $id=2;
-        $utilisateur=$this->getDoctrine()->getRepository('BackOfficeBundle:User')->findById($id)[0];
-        $form = $this->createFormBuilder($utilisateur)
-        ->add('nom',TextType::class)
-        ->add('prenom',TextType::class)
-        ->add('adresse',TextType::class)
-        ->add('ville',TextType::class)
-        ->add('distance_init',TextType::class)
-        ->add('service',TextType::class)
-        ->add('societe',TextType::class)
-        ->getForm();
-        return $this->render('FrontOfficeBundle:Default:formulaire-trajet.html.twig',array('form' => $form->createView()));
+      $idUser=2;
+      $deplacement = new Deplacement();
+      $utilisateur=$this->getDoctrine()->getRepository('BackOfficeBundle:User')->findById($idUser)[0];
+      $deplacement->setUser($utilisateur);
+      $form = $this->createForm('BackOfficeBundle\Form\DeplacementType', $deplacement);
+      $form->handleRequest($request);
+
+      if ($form->isSubmitted() && $form->isValid()) {
+          $em = $this->getDoctrine()->getManager();
+          $em->persist($deplacement);
+          $em->flush($deplacement);
+          return $this->redirectToRoute('new_deplacement_j', array('id' => $deplacement->getId()));
+      }
+
+      return $this->render('FrontOfficeBundle:Default:formulaire-trajet.html.twig',array('deplacement' => $deplacement,'form' => $form->createView()));
     }
+
+    public function nouveauTrajetJourAction(Request $request,Deplacement $deplacement)
+    {
+        $deplacementJour = new DeplacementJour();
+        $deplacementJour->setDeplacement($deplacement);
+        $form = $this->createForm('BackOfficeBundle\Form\DeplacementJourType', $deplacementJour);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($deplacementJour);
+            $em->flush($deplacementJour);
+
+            return $this->redirectToRoute('new_deplacement_j', array('id' => $deplacementJour->getId()));
+        }
+
+        return $this->render('deplacementjour/new.html.twig', array(
+            'deplacementJour' => $deplacementJour,
+            'form' => $form->createView(),
+        ));
+    }
+    
 }

@@ -5,5 +5,8 @@ profil:
     path:     /profil
     defaults: { _controller: FrontOfficeBundle:Default:profil }
 nouveauTrajet:
-    path:     /nouveau-trajet
+    path:     /nouveau-trajet/
     defaults: { _controller: FrontOfficeBundle:Default:nouveauTrajet }
+new_deplacement_j:
+    path:     /{id}/nouveau-trajet-jour
+    defaults: { _controller: FrontOfficeBundle:Default:nouveauTrajetJour }

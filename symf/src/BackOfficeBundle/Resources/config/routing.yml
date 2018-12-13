@@ -11,3 +11,6 @@ back_office_service:
 back_office_societe:
         resource: "@BackOfficeBundle/Resources/config/routing/societe.yml"
         prefix:   /societe
+back_office_deplacementjour:
+        resource: "@BackOfficeBundle/Resources/config/routing/deplacementjour.yml"
+        prefix:   /deplacementjour
