@@ -29,7 +29,7 @@ class DeplacementJourController extends Controller
             $em->persist($deplacementJour);
             $em->flush($deplacementJour);
 
-            return $this->redirectToRoute('f_deplacement_show', array('id' => $deplacementJour->getId()));
+            return $this->redirectToRoute('f_deplacement_show', array('id' => $deplacementJour->getDeplacement()->getId()));
         }
 
         return $this->render('FrontOfficeBundle:deplacementjour:new.html.twig', array(

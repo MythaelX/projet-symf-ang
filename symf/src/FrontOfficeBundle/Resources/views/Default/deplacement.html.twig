@@ -10,10 +10,8 @@
                 <th>Montant</th>
                 <th>Jour</th>
                 <th>Date</th>
-                <th>Created</th>
-                <th>Updated</th>
                 <th>Id</th>
-                <th>Actions</th>
+                {% if deplacement.validation==false %}<th>Actions</th>{% endif %}
             </tr>
         </thead>
         <tbody>
@@ -23,21 +21,21 @@
                 <td>{{ deplacementJour.montant }}</td>
                 <td>{{ deplacementJour.jour }}</td>
                 <td>{% if deplacementJour.date %}{{ deplacementJour.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if deplacementJour.created %}{{ deplacementJour.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if deplacementJour.updated %}{{ deplacementJour.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ deplacementJour.id }}</td>
+                {% if deplacement.validation==false %}
                 <td>
                     <ul>
                         <li>
                             <a href="{{ path('f_deplacementjour_show', { 'id': deplacementJour.id }) }}">show</a>
                         </li>
-                        {% if deplacement.validation==false %}
+
                         <li>
                             <a href="{{ path('f_deplacementjour_edit', { 'id': deplacementJour.id }) }}">edit</a>
                         </li>
-                        {% endif %}
+
                     </ul>
                 </td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
