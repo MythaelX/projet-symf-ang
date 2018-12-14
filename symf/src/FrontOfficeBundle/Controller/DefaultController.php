@@ -36,25 +36,6 @@ class DefaultController extends Controller
       return $this->render('FrontOfficeBundle:Default:profil.html.twig',array('form' => $form->createView()));
     }
 
-    public function nouveauTrajetAction(Request $request)
-    {
-      $idUser=2;
-      $deplacement = new Deplacement();
-      $utilisateur=$this->getDoctrine()->getRepository('BackOfficeBundle:User')->findById($idUser)[0];
-      $deplacement->setUser($utilisateur);
-      $form = $this->createForm('BackOfficeBundle\Form\DeplacementType', $deplacement);
-      $form->handleRequest($request);
-
-      if ($form->isSubmitted() && $form->isValid()) {
-          $em = $this->getDoctrine()->getManager();
-          $em->persist($deplacement);
-          $em->flush($deplacement);
-          return $this->redirectToRoute('new_deplacement_j', array('id' => $deplacement->getId()));
-      }
-
-      return $this->render('FrontOfficeBundle:Default:formulaire-trajet.html.twig',array('deplacement' => $deplacement,'form' => $form->createView()));
-    }
-
     public function nouveauTrajetJourAction(Request $request,Deplacement $deplacement)
     {
         $deplacementJour = new DeplacementJour();
@@ -75,5 +56,5 @@ class DefaultController extends Controller
             'form' => $form->createView(),
         ));
     }
-    
+
 }

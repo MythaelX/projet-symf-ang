@@ -4,9 +4,33 @@ front_office_homepage:
 profil:
     path:     /profil
     defaults: { _controller: FrontOfficeBundle:Default:profil }
-nouveauTrajet:
-    path:     /nouveau-trajet/
-    defaults: { _controller: FrontOfficeBundle:Default:nouveauTrajet }
-new_deplacement_j:
-    path:     /{id}/nouveau-trajet-jour
-    defaults: { _controller: FrontOfficeBundle:Default:nouveauTrajetJour }
+
+f_deplacement_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontOfficeBundle:Deplacement:show" }
+    methods:  GET
+f_deplacement_new:
+    path:     /new
+    defaults: { _controller: "FrontOfficeBundle:Deplacement:new" }
+    methods:  [GET, POST]
+f_deplacement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontOfficeBundle:Deplacement:edit" }
+    methods:  [GET, POST]
+
+f_deplacementjour_show:
+    path:     /{id}/showDeplacement
+    defaults: { _controller: "FrontOfficeBundle:DeplacementJour:show" }
+    methods:  GET
+f_deplacementjour_new:
+    path:     /{id}/newDeplacement
+    defaults: { _controller: "FrontOfficeBundle:DeplacementJour:new" }
+    methods:  [GET, POST]
+f_deplacementjour_edit:
+    path:     /{id}/editDeplacement
+    defaults: { _controller: "FrontOfficeBundle:DeplacementJour:edit" }
+    methods:  [GET, POST]
+f_deplacementjour_delete:
+    path:     /{id}/deleteDeplacement
+    defaults: { _controller: "FrontOfficeBundle:DeplacementJour:delete" }
+    methods:  DELETE

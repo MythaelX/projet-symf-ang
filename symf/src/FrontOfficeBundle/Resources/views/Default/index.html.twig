@@ -2,22 +2,40 @@
 {% block body %}
   <span id="bienvenue">Bienvenue ! {{utilisateur.nom}} {{utilisateur.prenom}}</span>
   <div id="tableau">
-  Liste des Déplacements:
+  <h1>Déplacements liste :</h1>
 
-  <table>
-    <tr>
-      <th>Annee</th>
-      <th>Mois</th>
-      <th>Voir/Modifier</th>
-    </tr>
-    {% for instance in deplacements %}
-    <tr>
-        <td>{{ instance.annee }}</td>
-        <td>{{ instance.mois }}</td>
-        <td><a href="{{ path('new_deplacement_j',{ 'id':instance.id}) }}">Oui</a></td>
-    </tr>
+<table>
+    <thead>
+        <tr>
+            <th>Année</th>
+            <th>Mois</th>
+            <th>Date de validation</th>
+            <th>Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for deplacement in deplacements %}
+        <tr>
+            <td><a href="{{ path('f_deplacement_show', { 'id': deplacement.id }) }}">{{ deplacement.annee }}</a></td>
+            <td>{{ deplacement.mois }}</td>
+            <td>{% if deplacement.validation %}{{ deplacement.dateValidation|date('Y-m-d') }}{% else %}Pas validé{% endif %}</td>
+            <td>{{ deplacement.id }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('f_deplacement_show', { 'id': deplacement.id }) }}">show</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
     {% endfor %}
+    </tbody>
 </table>
-</div>
 
+<ul>
+    <li>
+        <a href="{{ path('f_deplacement_new') }}">Créer un nouveau Déplacements</a>
+    </li>
+</ul>
 {% endblock %}

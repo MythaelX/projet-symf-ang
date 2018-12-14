@@ -123,19 +123,82 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'FrontOfficeBundle\\Controller\\DefaultController::profilAction',  '_route' => 'profil',);
         }
 
-        // nouveauTrajet
-        if (rtrim($pathinfo, '/') === '/nouveau-trajet') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'nouveauTrajet');
+        // f_deplacement_show
+        if (preg_match('#^/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_f_deplacement_show;
             }
 
-            return array (  '_controller' => 'FrontOfficeBundle\\Controller\\DefaultController::nouveauTrajetAction',  '_route' => 'nouveauTrajet',);
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacement_show')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementController::showAction',));
         }
+        not_f_deplacement_show:
 
-        // new_deplacement_j
-        if (preg_match('#^/(?P<id>[^/]++)/nouveau\\-trajet\\-jour$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'new_deplacement_j')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DefaultController::nouveauTrajetJourAction',));
+        // f_deplacement_new
+        if ($pathinfo === '/new') {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_f_deplacement_new;
+            }
+
+            return array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementController::newAction',  '_route' => 'f_deplacement_new',);
         }
+        not_f_deplacement_new:
+
+        // f_deplacement_edit
+        if (preg_match('#^/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_f_deplacement_edit;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacement_edit')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementController::editAction',));
+        }
+        not_f_deplacement_edit:
+
+        // f_deplacementjour_show
+        if (preg_match('#^/(?P<id>[^/]++)/showDeplacement$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_f_deplacementjour_show;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacementjour_show')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementJourController::showAction',));
+        }
+        not_f_deplacementjour_show:
+
+        // f_deplacementjour_new
+        if (preg_match('#^/(?P<id>[^/]++)/newDeplacement$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_f_deplacementjour_new;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacementjour_new')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementJourController::newAction',));
+        }
+        not_f_deplacementjour_new:
+
+        // f_deplacementjour_edit
+        if (preg_match('#^/(?P<id>[^/]++)/editDeplacement$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_f_deplacementjour_edit;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacementjour_edit')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementJourController::editAction',));
+        }
+        not_f_deplacementjour_edit:
+
+        // f_deplacementjour_delete
+        if (preg_match('#^/(?P<id>[^/]++)/deleteDeplacement$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'DELETE') {
+                $allow[] = 'DELETE';
+                goto not_f_deplacementjour_delete;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacementjour_delete')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementJourController::deleteAction',));
+        }
+        not_f_deplacementjour_delete:
 
         if (0 === strpos($pathinfo, '/admindep')) {
             if (0 === strpos($pathinfo, '/admindep/deplacement')) {
