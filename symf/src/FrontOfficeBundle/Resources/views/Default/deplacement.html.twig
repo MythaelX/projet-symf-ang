@@ -17,7 +17,7 @@
         <tbody>
         {% for deplacementJour in deplacementJours %}
             <tr>
-                <td><a href="{{ path('f_deplacementjour_show', { 'id': deplacementJour.id }) }}">{{ deplacementJour.nbKm }}</a></td>
+                <td>{{ deplacementJour.nbKm }}</td>
                 <td>{{ deplacementJour.montant }}</td>
                 <td>{{ deplacementJour.jour }}</td>
                 <td>{% if deplacementJour.date %}{{ deplacementJour.date|date('Y-m-d') }}{% endif %}</td>
@@ -40,10 +40,11 @@
         {% endfor %}
         </tbody>
     </table>
-
+    {% if deplacement.validation==false %}
     <ul>
         <li>
             <a href="{{ path('f_deplacementjour_new',{ 'id': deplacement.id }) }}">Créer un nouveau déplacement</a>
         </li>
     </ul>
+    {% endif %}
 {% endblock %}

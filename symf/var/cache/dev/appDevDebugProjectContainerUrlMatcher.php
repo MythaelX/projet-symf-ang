@@ -201,68 +201,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         not_f_deplacementjour_delete:
 
         if (0 === strpos($pathinfo, '/admindep')) {
-            if (0 === strpos($pathinfo, '/admindep/deplacement')) {
-                // deplacement_index
-                if (rtrim($pathinfo, '/') === '/admindep/deplacement') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_deplacement_index;
-                    }
-
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'deplacement_index');
-                    }
-
-                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::indexAction',  '_route' => 'deplacement_index',);
-                }
-                not_deplacement_index:
-
-                // deplacement_show
-                if (preg_match('#^/admindep/deplacement/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_deplacement_show;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacement_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::showAction',));
-                }
-                not_deplacement_show:
-
-                // deplacement_new
-                if ($pathinfo === '/admindep/deplacement/new') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_deplacement_new;
-                    }
-
-                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::newAction',  '_route' => 'deplacement_new',);
-                }
-                not_deplacement_new:
-
-                // deplacement_edit
-                if (preg_match('#^/admindep/deplacement/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_deplacement_edit;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacement_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::editAction',));
-                }
-                not_deplacement_edit:
-
-                // deplacement_delete
-                if (preg_match('#^/admindep/deplacement/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                    if ($this->context->getMethod() != 'DELETE') {
-                        $allow[] = 'DELETE';
-                        goto not_deplacement_delete;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacement_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::deleteAction',));
-                }
-                not_deplacement_delete:
-
-            }
-
             // back_office_homepage
             if (rtrim($pathinfo, '/') === '/admindep') {
                 if (substr($pathinfo, -1) !== '/') {
@@ -399,65 +337,375 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            if (0 === strpos($pathinfo, '/admindep/deplacementjour')) {
-                // deplacementjour_index
-                if (rtrim($pathinfo, '/') === '/admindep/deplacementjour') {
+            if (0 === strpos($pathinfo, '/admindep/deplacement')) {
+                if (0 === strpos($pathinfo, '/admindep/deplacementjour')) {
+                    // deplacementjour_index
+                    if (rtrim($pathinfo, '/') === '/admindep/deplacementjour') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_deplacementjour_index;
+                        }
+
+                        if (substr($pathinfo, -1) !== '/') {
+                            return $this->redirect($pathinfo.'/', 'deplacementjour_index');
+                        }
+
+                        return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::indexAction',  '_route' => 'deplacementjour_index',);
+                    }
+                    not_deplacementjour_index:
+
+                    // deplacementjour_show
+                    if (preg_match('#^/admindep/deplacementjour/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_deplacementjour_show;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacementjour_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::showAction',));
+                    }
+                    not_deplacementjour_show:
+
+                    // deplacementjour_new
+                    if ($pathinfo === '/admindep/deplacementjour/new') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                            goto not_deplacementjour_new;
+                        }
+
+                        return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::newAction',  '_route' => 'deplacementjour_new',);
+                    }
+                    not_deplacementjour_new:
+
+                    // deplacementjour_edit
+                    if (preg_match('#^/admindep/deplacementjour/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                            goto not_deplacementjour_edit;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacementjour_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::editAction',));
+                    }
+                    not_deplacementjour_edit:
+
+                    // deplacementjour_delete
+                    if (preg_match('#^/admindep/deplacementjour/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_deplacementjour_delete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacementjour_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::deleteAction',));
+                    }
+                    not_deplacementjour_delete:
+
+                }
+
+                // deplacement_index
+                if (rtrim($pathinfo, '/') === '/admindep/deplacement') {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_deplacementjour_index;
+                        goto not_deplacement_index;
                     }
 
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'deplacementjour_index');
+                        return $this->redirect($pathinfo.'/', 'deplacement_index');
                     }
 
-                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::indexAction',  '_route' => 'deplacementjour_index',);
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::indexAction',  '_route' => 'deplacement_index',);
                 }
-                not_deplacementjour_index:
+                not_deplacement_index:
 
-                // deplacementjour_show
-                if (preg_match('#^/admindep/deplacementjour/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                // deplacement_show
+                if (preg_match('#^/admindep/deplacement/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_deplacementjour_show;
+                        goto not_deplacement_show;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacementjour_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::showAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacement_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::showAction',));
                 }
-                not_deplacementjour_show:
+                not_deplacement_show:
 
-                // deplacementjour_new
-                if ($pathinfo === '/admindep/deplacementjour/new') {
+                // deplacement_new
+                if ($pathinfo === '/admindep/deplacement/new') {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_deplacementjour_new;
+                        goto not_deplacement_new;
                     }
 
-                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::newAction',  '_route' => 'deplacementjour_new',);
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::newAction',  '_route' => 'deplacement_new',);
                 }
-                not_deplacementjour_new:
+                not_deplacement_new:
 
-                // deplacementjour_edit
-                if (preg_match('#^/admindep/deplacementjour/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                // deplacement_edit
+                if (preg_match('#^/admindep/deplacement/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_deplacementjour_edit;
+                        goto not_deplacement_edit;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacementjour_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::editAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacement_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::editAction',));
                 }
-                not_deplacementjour_edit:
+                not_deplacement_edit:
 
-                // deplacementjour_delete
-                if (preg_match('#^/admindep/deplacementjour/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                // deplacement_delete
+                if (preg_match('#^/admindep/deplacement/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'DELETE') {
                         $allow[] = 'DELETE';
-                        goto not_deplacementjour_delete;
+                        goto not_deplacement_delete;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacementjour_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementJourController::deleteAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deplacement_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\DeplacementController::deleteAction',));
                 }
-                not_deplacementjour_delete:
+                not_deplacement_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/admindep/typedeplacement')) {
+                // typedeplacement_index
+                if (rtrim($pathinfo, '/') === '/admindep/typedeplacement') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_typedeplacement_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'typedeplacement_index');
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeDeplacementController::indexAction',  '_route' => 'typedeplacement_index',);
+                }
+                not_typedeplacement_index:
+
+                // typedeplacement_show
+                if (preg_match('#^/admindep/typedeplacement/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_typedeplacement_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'typedeplacement_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeDeplacementController::showAction',));
+                }
+                not_typedeplacement_show:
+
+                // typedeplacement_new
+                if ($pathinfo === '/admindep/typedeplacement/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_typedeplacement_new;
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeDeplacementController::newAction',  '_route' => 'typedeplacement_new',);
+                }
+                not_typedeplacement_new:
+
+                // typedeplacement_edit
+                if (preg_match('#^/admindep/typedeplacement/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_typedeplacement_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'typedeplacement_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeDeplacementController::editAction',));
+                }
+                not_typedeplacement_edit:
+
+                // typedeplacement_delete
+                if (preg_match('#^/admindep/typedeplacement/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_typedeplacement_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'typedeplacement_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeDeplacementController::deleteAction',));
+                }
+                not_typedeplacement_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/admindep/ville')) {
+                // ville_index
+                if (rtrim($pathinfo, '/') === '/admindep/ville') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ville_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'ville_index');
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\VilleController::indexAction',  '_route' => 'ville_index',);
+                }
+                not_ville_index:
+
+                // ville_show
+                if (preg_match('#^/admindep/ville/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ville_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\VilleController::showAction',));
+                }
+                not_ville_show:
+
+                // ville_new
+                if ($pathinfo === '/admindep/ville/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_ville_new;
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\VilleController::newAction',  '_route' => 'ville_new',);
+                }
+                not_ville_new:
+
+                // ville_edit
+                if (preg_match('#^/admindep/ville/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_ville_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\VilleController::editAction',));
+                }
+                not_ville_edit:
+
+                // ville_delete
+                if (preg_match('#^/admindep/ville/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_ville_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\VilleController::deleteAction',));
+                }
+                not_ville_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/admindep/typeuser')) {
+                // typeuser_index
+                if (rtrim($pathinfo, '/') === '/admindep/typeuser') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_typeuser_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'typeuser_index');
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeUserController::indexAction',  '_route' => 'typeuser_index',);
+                }
+                not_typeuser_index:
+
+                // typeuser_show
+                if (preg_match('#^/admindep/typeuser/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_typeuser_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'typeuser_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeUserController::showAction',));
+                }
+                not_typeuser_show:
+
+                // typeuser_new
+                if ($pathinfo === '/admindep/typeuser/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_typeuser_new;
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeUserController::newAction',  '_route' => 'typeuser_new',);
+                }
+                not_typeuser_new:
+
+                // typeuser_edit
+                if (preg_match('#^/admindep/typeuser/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_typeuser_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'typeuser_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeUserController::editAction',));
+                }
+                not_typeuser_edit:
+
+                // typeuser_delete
+                if (preg_match('#^/admindep/typeuser/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_typeuser_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'typeuser_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\TypeUserController::deleteAction',));
+                }
+                not_typeuser_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/admindep/user')) {
+                // user_index
+                if (rtrim($pathinfo, '/') === '/admindep/user') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_user_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'user_index');
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\UserController::indexAction',  '_route' => 'user_index',);
+                }
+                not_user_index:
+
+                // user_show
+                if (preg_match('#^/admindep/user/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_user_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_show')), array (  '_controller' => 'BackOfficeBundle\\Controller\\UserController::showAction',));
+                }
+                not_user_show:
+
+                // user_new
+                if ($pathinfo === '/admindep/user/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_user_new;
+                    }
+
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\UserController::newAction',  '_route' => 'user_new',);
+                }
+                not_user_new:
+
+                // user_edit
+                if (preg_match('#^/admindep/user/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_user_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_edit')), array (  '_controller' => 'BackOfficeBundle\\Controller\\UserController::editAction',));
+                }
+                not_user_edit:
+
+                // user_delete
+                if (preg_match('#^/admindep/user/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_user_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete')), array (  '_controller' => 'BackOfficeBundle\\Controller\\UserController::deleteAction',));
+                }
+                not_user_delete:
 
             }
 

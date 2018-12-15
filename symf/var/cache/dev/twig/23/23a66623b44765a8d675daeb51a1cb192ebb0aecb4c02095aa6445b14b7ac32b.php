@@ -21,20 +21,20 @@ class __TwigTemplate_b55d2b0d981126d89dc66e3b0452507bea0822bd84e29482942768778ec
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_00608f4a4484f7a9743fad2f5741a10957f7adf74f86832a2ea67f0e8cbd59bf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_00608f4a4484f7a9743fad2f5741a10957f7adf74f86832a2ea67f0e8cbd59bf->enter($__internal_00608f4a4484f7a9743fad2f5741a10957f7adf74f86832a2ea67f0e8cbd59bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:index.html.twig"));
+        $__internal_e50d78ef45abd7a7b439b4cb95f1e45b97e6de07732a69e97d2fd0bd5cc08baa = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e50d78ef45abd7a7b439b4cb95f1e45b97e6de07732a69e97d2fd0bd5cc08baa->enter($__internal_e50d78ef45abd7a7b439b4cb95f1e45b97e6de07732a69e97d2fd0bd5cc08baa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_00608f4a4484f7a9743fad2f5741a10957f7adf74f86832a2ea67f0e8cbd59bf->leave($__internal_00608f4a4484f7a9743fad2f5741a10957f7adf74f86832a2ea67f0e8cbd59bf_prof);
+        $__internal_e50d78ef45abd7a7b439b4cb95f1e45b97e6de07732a69e97d2fd0bd5cc08baa->leave($__internal_e50d78ef45abd7a7b439b4cb95f1e45b97e6de07732a69e97d2fd0bd5cc08baa_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_b2caa9be746c0fb529924269089b7c299c94b8a1dfcde3aec48ac2c537ac1359 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b2caa9be746c0fb529924269089b7c299c94b8a1dfcde3aec48ac2c537ac1359->enter($__internal_b2caa9be746c0fb529924269089b7c299c94b8a1dfcde3aec48ac2c537ac1359_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_fb01546d51231108bdcd94ab8a004ce946da3ed0c805a6572dedfe3f433115db = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fb01546d51231108bdcd94ab8a004ce946da3ed0c805a6572dedfe3f433115db->enter($__internal_fb01546d51231108bdcd94ab8a004ce946da3ed0c805a6572dedfe3f433115db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "  <span id=\"bienvenue\">Bienvenue ! ";
@@ -93,20 +93,7 @@ class __TwigTemplate_b55d2b0d981126d89dc66e3b0452507bea0822bd84e29482942768778ec
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("f_deplacement_show", array("id" => $this->getAttribute($context["deplacement"], "id", array()))), "html", null, true);
             echo "\">show</a>
                     </li>
-                    ";
-            // line 29
-            if (($this->getAttribute($context["deplacement"], "validation", array()) == false)) {
-                // line 30
-                echo "                    <li>
-                        <a href=\"";
-                // line 31
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("f_deplacement_edit", array("id" => $this->getAttribute($context["deplacement"], "id", array()))), "html", null, true);
-                echo "\">edit</a>
-                    </li>
-                    ";
-            }
-            // line 34
-            echo "                </ul>
+                </ul>
             </td>
         </tr>
     ";
@@ -114,21 +101,21 @@ class __TwigTemplate_b55d2b0d981126d89dc66e3b0452507bea0822bd84e29482942768778ec
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['deplacement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 33
         echo "    </tbody>
 </table>
 
 <ul>
     <li>
         <a href=\"";
-        // line 43
+        // line 38
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("f_deplacement_new");
         echo "\">Créer un nouveau Déplacements</a>
     </li>
 </ul>
 ";
         
-        $__internal_b2caa9be746c0fb529924269089b7c299c94b8a1dfcde3aec48ac2c537ac1359->leave($__internal_b2caa9be746c0fb529924269089b7c299c94b8a1dfcde3aec48ac2c537ac1359_prof);
+        $__internal_fb01546d51231108bdcd94ab8a004ce946da3ed0c805a6572dedfe3f433115db->leave($__internal_fb01546d51231108bdcd94ab8a004ce946da3ed0c805a6572dedfe3f433115db_prof);
 
     }
 
@@ -144,7 +131,7 @@ class __TwigTemplate_b55d2b0d981126d89dc66e3b0452507bea0822bd84e29482942768778ec
 
     public function getDebugInfo()
     {
-        return array (  125 => 43,  118 => 38,  109 => 34,  103 => 31,  100 => 30,  98 => 29,  93 => 27,  86 => 23,  78 => 22,  74 => 21,  68 => 20,  65 => 19,  61 => 18,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  112 => 38,  105 => 33,  93 => 27,  86 => 23,  78 => 22,  74 => 21,  68 => 20,  65 => 19,  61 => 18,  40 => 3,  34 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -185,11 +172,6 @@ class __TwigTemplate_b55d2b0d981126d89dc66e3b0452507bea0822bd84e29482942768778ec
                     <li>
                         <a href=\"{{ path('f_deplacement_show', { 'id': deplacement.id }) }}\">show</a>
                     </li>
-                    {% if deplacement.validation==false %}
-                    <li>
-                        <a href=\"{{ path('f_deplacement_edit', { 'id': deplacement.id }) }}\">edit</a>
-                    </li>
-                    {% endif %}
                 </ul>
             </td>
         </tr>
