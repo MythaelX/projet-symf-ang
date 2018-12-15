@@ -287,4 +287,8 @@ class Deplacement
         return $this->user1;
     }
 
+    public function __toString()
+    {
+      return "$this->id" ;
+    }
 }

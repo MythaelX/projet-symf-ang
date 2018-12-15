@@ -39,6 +39,8 @@ class DeplacementController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $user = $em->getRepository('BackOfficeBundle:User')->findById(1)[0];
+            $deplacement->setUser($user);
             $em->persist($deplacement);
             $em->flush($deplacement);
 
@@ -72,10 +74,13 @@ class DeplacementController extends Controller
     public function editAction(Request $request, Deplacement $deplacement)
     {
         $deleteForm = $this->createDeleteForm($deplacement);
-        $editForm = $this->createForm('BackOfficeBundle\Form\DeplacementType', $deplacement);
+        $editForm = $this->createForm('BackOfficeBundle\Form\DeplacementType2', $deplacement);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $user = $em->getRepository('BackOfficeBundle:User')->findById(1)[0];
+            $deplacement->setUser1($user);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('deplacement_edit', array('id' => $deplacement->getId()));

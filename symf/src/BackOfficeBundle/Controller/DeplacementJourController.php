@@ -34,7 +34,7 @@ class DeplacementJourController extends Controller
     public function newAction(Request $request)
     {
         $deplacementJour = new Deplacementjour();
-        $form = $this->createForm('BackOfficeBundle\Form\DeplacementJourType', $deplacementJour);
+        $form = $this->createForm('BackOfficeBundle\Form\DeplacementJourType2', $deplacementJour);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -72,7 +72,7 @@ class DeplacementJourController extends Controller
     public function editAction(Request $request, DeplacementJour $deplacementJour)
     {
         $deleteForm = $this->createDeleteForm($deplacementJour);
-        $editForm = $this->createForm('BackOfficeBundle\Form\DeplacementJourType', $deplacementJour);
+        $editForm = $this->createForm('BackOfficeBundle\Form\DeplacementJourType2', $deplacementJour);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

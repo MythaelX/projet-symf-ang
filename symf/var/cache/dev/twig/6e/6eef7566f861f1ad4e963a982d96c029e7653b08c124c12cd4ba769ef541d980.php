@@ -21,23 +21,27 @@ class __TwigTemplate_e210b62b5f5a2501b3ac085dc4df106e8fd0081aa4b50a025317f39a4fb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_694dc43aa215510b362a57fdab8fc306c873a48ba953730db5d83a17641915a3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_694dc43aa215510b362a57fdab8fc306c873a48ba953730db5d83a17641915a3->enter($__internal_694dc43aa215510b362a57fdab8fc306c873a48ba953730db5d83a17641915a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:index.html.twig"));
+        $__internal_321eccc03637e6c9bc9f5b484308c48ae4db9ed1d398d3160fcc6f22a1032d9f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_321eccc03637e6c9bc9f5b484308c48ae4db9ed1d398d3160fcc6f22a1032d9f->enter($__internal_321eccc03637e6c9bc9f5b484308c48ae4db9ed1d398d3160fcc6f22a1032d9f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_694dc43aa215510b362a57fdab8fc306c873a48ba953730db5d83a17641915a3->leave($__internal_694dc43aa215510b362a57fdab8fc306c873a48ba953730db5d83a17641915a3_prof);
+        $__internal_321eccc03637e6c9bc9f5b484308c48ae4db9ed1d398d3160fcc6f22a1032d9f->leave($__internal_321eccc03637e6c9bc9f5b484308c48ae4db9ed1d398d3160fcc6f22a1032d9f_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_b00e4eac21b728280b2d9273efcfc62832a14fadbe059c0ea0d322dbb798e84d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b00e4eac21b728280b2d9273efcfc62832a14fadbe059c0ea0d322dbb798e84d->enter($__internal_b00e4eac21b728280b2d9273efcfc62832a14fadbe059c0ea0d322dbb798e84d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_66a6df3cd1202110556c8184981d47bc1d2ca7c98bd0c5c76a3f3a0857ac346f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_66a6df3cd1202110556c8184981d47bc1d2ca7c98bd0c5c76a3f3a0857ac346f->enter($__internal_66a6df3cd1202110556c8184981d47bc1d2ca7c98bd0c5c76a3f3a0857ac346f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "  Bienvenue ! nom prenom
+        echo "  Bienvenue ";
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["utilisateur"] ?? $this->getContext($context, "utilisateur")), "nom", array()), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["utilisateur"] ?? $this->getContext($context, "utilisateur")), "prenom", array()), "html", null, true);
+        echo " dans le backOffice ! 
   <ul>
   <li><a href=\"";
         // line 5
@@ -74,7 +78,7 @@ class __TwigTemplate_e210b62b5f5a2501b3ac085dc4df106e8fd0081aa4b50a025317f39a4fb
   </ul>
 ";
         
-        $__internal_b00e4eac21b728280b2d9273efcfc62832a14fadbe059c0ea0d322dbb798e84d->leave($__internal_b00e4eac21b728280b2d9273efcfc62832a14fadbe059c0ea0d322dbb798e84d_prof);
+        $__internal_66a6df3cd1202110556c8184981d47bc1d2ca7c98bd0c5c76a3f3a0857ac346f->leave($__internal_66a6df3cd1202110556c8184981d47bc1d2ca7c98bd0c5c76a3f3a0857ac346f_prof);
 
     }
 
@@ -90,7 +94,7 @@ class __TwigTemplate_e210b62b5f5a2501b3ac085dc4df106e8fd0081aa4b50a025317f39a4fb
 
     public function getDebugInfo()
     {
-        return array (  72 => 12,  68 => 11,  64 => 10,  60 => 9,  56 => 8,  52 => 7,  48 => 6,  44 => 5,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  76 => 12,  72 => 11,  68 => 10,  64 => 9,  60 => 8,  56 => 7,  52 => 6,  48 => 5,  40 => 3,  34 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -105,7 +109,7 @@ class __TwigTemplate_e210b62b5f5a2501b3ac085dc4df106e8fd0081aa4b50a025317f39a4fb
     {
         return new Twig_Source("{% extends 'baseBack.html.twig' %}
 {% block body %}
-  Bienvenue ! nom prenom
+  Bienvenue {{utilisateur.nom}} {{utilisateur.prenom}} dans le backOffice ! 
   <ul>
   <li><a href=\"{{ path('deplacement_index') }}\">Modifier la table deplacement</a></li>
   <li><a href=\"{{ path('deplacementjour_index') }}\">Modifier la table deplacement_jour</a></li>

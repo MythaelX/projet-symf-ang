@@ -364,4 +364,15 @@ class Deplacement extends \BackOfficeBundle\Entity\Deplacement implements \Doctr
         return parent::getUser1();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

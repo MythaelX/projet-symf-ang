@@ -34,7 +34,7 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $user = new User();
-        $form = $this->createForm('BackOfficeBundle\Form\UserType', $user);
+        $form = $this->createForm('BackOfficeBundle\Form\UserType2', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -72,7 +72,7 @@ class UserController extends Controller
     public function editAction(Request $request, User $user)
     {
         $deleteForm = $this->createDeleteForm($user);
-        $editForm = $this->createForm('BackOfficeBundle\Form\UserType', $user);
+        $editForm = $this->createForm('BackOfficeBundle\Form\UserType2', $user);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
