@@ -211,6 +211,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             if (0 === strpos($pathinfo, '/admindep/s')) {
+                // back_office_statistique
+                if ($pathinfo === '/admindep/statistique') {
+                    return array (  '_controller' => 'BackOfficeBundle\\Controller\\DefaultController::statistiqueAction',  '_route' => 'back_office_statistique',);
+                }
+
                 if (0 === strpos($pathinfo, '/admindep/service')) {
                     // service_index
                     if (rtrim($pathinfo, '/') === '/admindep/service') {

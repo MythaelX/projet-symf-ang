@@ -1,0 +1,43 @@
+{% extends 'baseBack.html.twig' %}
+{% block body %}
+<div>
+Nombre d'utilisateur par ville :
+<table>
+    <thead>
+        <tr>
+            <th>Ville</th>
+            <th>nombre d'utilisateur</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for instance in stat_ville_user %}
+        <tr>
+            <td>{{ instance.ville }}</a></td>
+            <td>{{ instance.nombre_utilisateur }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<div>
+Nombre d'utilisateur et de kilometre par societe :
+<table>
+    <thead>
+        <tr>
+            <th>Societe</th>
+            <th>nombre d'utilisateur</th>
+            <th>nombre de kilometre</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for instance in stat_societe_user %}
+        <tr>
+            <td>{{ instance.societe }}</a></td>
+            <td>{{ instance.nombre_utilisateur }}</td>
+            <td>{{ instance.kilometre }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'baseBack.html.twig' %}
 {% block body %}
-  Bienvenue {{utilisateur.nom}} {{utilisateur.prenom}} dans le backOffice ! 
+  Bienvenue {{utilisateur.nom}} {{utilisateur.prenom}} dans le backOffice !
   <ul>
   <li><a href="{{ path('deplacement_index') }}">Modifier la table deplacement</a></li>
   <li><a href="{{ path('deplacementjour_index') }}">Modifier la table deplacement_jour</a></li>
@@ -11,4 +11,5 @@
   <li><a href="{{ path('user_index') }}">Modifier la table user</a></li>
   <li><a href="{{ path('ville_index') }}">Modifier la table ville</a></li>
   </ul>
+  <a href="{{ path('back_office_statistique') }}">Statistique</a>
 {% endblock %}
