@@ -4,7 +4,6 @@ front_office_homepage:
 profil:
     path:     /profil
     defaults: { _controller: FrontOfficeBundle:Default:profil }
-
 f_deplacement_show:
     path:     /{id}/show
     defaults: { _controller: "FrontOfficeBundle:Deplacement:show" }
@@ -13,11 +12,6 @@ f_deplacement_new:
     path:     /new
     defaults: { _controller: "FrontOfficeBundle:Deplacement:new" }
     methods:  [GET, POST]
-f_deplacement_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "FrontOfficeBundle:Deplacement:edit" }
-    methods:  [GET, POST]
-
 f_deplacementjour_show:
     path:     /{id}/showDeplacement
     defaults: { _controller: "FrontOfficeBundle:DeplacementJour:show" }

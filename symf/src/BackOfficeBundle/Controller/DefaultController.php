@@ -6,6 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
+    /**
+    * show admin homepage with idUser 1.
+    *
+    */
     public function indexAction()
     {
       $em = $this->getDoctrine()->getManager();
@@ -13,6 +17,10 @@ class DefaultController extends Controller
       return $this->render('BackOfficeBundle:Default:index.html.twig',array('utilisateur' => $user));
     }
 
+    /**
+    * Lists all statistic  with function in UserRepository.
+    *
+    */
     public function statistiqueAction()
     {
       $em = $this->getDoctrine()->getManager();

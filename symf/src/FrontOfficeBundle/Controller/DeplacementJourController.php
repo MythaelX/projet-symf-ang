@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DeplacementJourController extends Controller
 {
     /**
-     * Creates a new deplacementJour entity.
+     * Creates a new deplacementJour entity with entity deplacement.
      *
      */
     public function newAction(Request $request,Deplacement $deplacement)

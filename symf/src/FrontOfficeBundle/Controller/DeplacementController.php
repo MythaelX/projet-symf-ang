@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DeplacementController extends Controller
 {
     /**
-     * Creates a new deplacement entity.
+     * Creates a new deplacement entity with idUser.
      *
      */
     public function newAction(Request $request)
@@ -36,7 +36,7 @@ class DeplacementController extends Controller
     }
 
     /**
-     * Finds and displays a deplacementjour entity.
+     * Finds and displays a deplacementjour entity with deplacement entity.
      *
      */
     public function showAction(Deplacement $deplacement)
@@ -48,29 +48,6 @@ class DeplacementController extends Controller
         return $this->render('FrontOfficeBundle:Default:deplacement.html.twig', array(
             'deplacementJours' => $deplacementJours,
             'deplacement' => $deplacement
-        ));
-    }
-
-    /**
-     * Displays a form to edit an existing deplacement entity.
-     *
-     */
-    public function editAction(Request $request, Deplacement $deplacement)
-    {
-        $deleteForm = $this->createDeleteForm($deplacement);
-        $editForm = $this->createForm('BackOfficeBundle\Form\DeplacementType', $deplacement);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('deplacement_edit', array('id' => $deplacement->getId()));
-        }
-
-        return $this->render('deplacement/edit.html.twig', array(
-            'deplacement' => $deplacement,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

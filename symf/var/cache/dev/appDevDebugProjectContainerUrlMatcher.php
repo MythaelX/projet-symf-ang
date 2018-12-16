@@ -145,17 +145,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_f_deplacement_new:
 
-        // f_deplacement_edit
-        if (preg_match('#^/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                goto not_f_deplacement_edit;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'f_deplacement_edit')), array (  '_controller' => 'FrontOfficeBundle\\Controller\\DeplacementController::editAction',));
-        }
-        not_f_deplacement_edit:
-
         // f_deplacementjour_show
         if (preg_match('#^/(?P<id>[^/]++)/showDeplacement$#s', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {

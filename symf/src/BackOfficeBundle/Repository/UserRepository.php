@@ -10,10 +10,20 @@ namespace BackOfficeBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+
+  /**
+  * Give number of user by city.
+  *
+  */
   public function findAllUtilisateurByVille()
     {
       return $this->getEntityManager()->createQuery('Select v.ville ,COUNT(u) nombre_utilisateur FROM BackOfficeBundle:user u INNER JOIN BackOfficeBundle:ville v WITH u.ville = v.id GROUP BY u.ville')->getResult();
     }
+
+  /**
+  * Give number of user and kilometer by coperation.
+  *
+  */
   public function findAllUtilisateurAndKilometreBySociete()
     {
       return $this->getEntityManager()->createQuery('Select s.societe,sum(dj.nbKm) nombre_kilometre, COUNT(DISTINCT u.id) nombre_utilisateur
@@ -26,6 +36,11 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
     // FROM deplacement_jour dj, deplacement d,user u,societe s
     // WHERE dj.deplacement_id=d.id AND d.user_id=u.id AND s.id=u.societe_id
     // GROUP BY s.id
+
+  /**
+  * Give number of kilometer by user per month (in the current year) by coperation.
+  *
+  */
   public function findKilometreMoisBySocieteAndUtilisateur()
     {
       $annee_en_cour=date("Y",time());
