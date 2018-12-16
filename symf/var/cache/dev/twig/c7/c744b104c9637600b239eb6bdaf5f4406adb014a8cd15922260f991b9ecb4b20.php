@@ -8,7 +8,7 @@ class __TwigTemplate_3be364f78b08afc79599d02ede0878dcaa8daf74d50f55d347e8a9ca35e
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":typedeplacement:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("baseBack.html.twig", ":typedeplacement:edit.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -16,25 +16,25 @@ class __TwigTemplate_3be364f78b08afc79599d02ede0878dcaa8daf74d50f55d347e8a9ca35e
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "baseBack.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e7426df5a210a9ef2f674ccbbed70a045a5f3f5c09d0c4399c54878c709f8cc6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e7426df5a210a9ef2f674ccbbed70a045a5f3f5c09d0c4399c54878c709f8cc6->enter($__internal_e7426df5a210a9ef2f674ccbbed70a045a5f3f5c09d0c4399c54878c709f8cc6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":typedeplacement:edit.html.twig"));
+        $__internal_cd3564afa4fd1754b4559572f9ea05bdcb7c702c4e210e8961278743a72760f5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_cd3564afa4fd1754b4559572f9ea05bdcb7c702c4e210e8961278743a72760f5->enter($__internal_cd3564afa4fd1754b4559572f9ea05bdcb7c702c4e210e8961278743a72760f5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":typedeplacement:edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_e7426df5a210a9ef2f674ccbbed70a045a5f3f5c09d0c4399c54878c709f8cc6->leave($__internal_e7426df5a210a9ef2f674ccbbed70a045a5f3f5c09d0c4399c54878c709f8cc6_prof);
+        $__internal_cd3564afa4fd1754b4559572f9ea05bdcb7c702c4e210e8961278743a72760f5->leave($__internal_cd3564afa4fd1754b4559572f9ea05bdcb7c702c4e210e8961278743a72760f5_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_9cfd046acd8a0068625578eca1d1ce9c4504e9d4b976fca3033e90934e999432 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9cfd046acd8a0068625578eca1d1ce9c4504e9d4b976fca3033e90934e999432->enter($__internal_9cfd046acd8a0068625578eca1d1ce9c4504e9d4b976fca3033e90934e999432_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6e45910a8fd8285504b9bfe7b206368afbc1b7bf99e96e1ca68f4138d6832399 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6e45910a8fd8285504b9bfe7b206368afbc1b7bf99e96e1ca68f4138d6832399->enter($__internal_6e45910a8fd8285504b9bfe7b206368afbc1b7bf99e96e1ca68f4138d6832399_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Typedeplacement edit</h1>
@@ -74,7 +74,7 @@ class __TwigTemplate_3be364f78b08afc79599d02ede0878dcaa8daf74d50f55d347e8a9ca35e
     </ul>
 ";
         
-        $__internal_9cfd046acd8a0068625578eca1d1ce9c4504e9d4b976fca3033e90934e999432->leave($__internal_9cfd046acd8a0068625578eca1d1ce9c4504e9d4b976fca3033e90934e999432_prof);
+        $__internal_6e45910a8fd8285504b9bfe7b206368afbc1b7bf99e96e1ca68f4138d6832399->leave($__internal_6e45910a8fd8285504b9bfe7b206368afbc1b7bf99e96e1ca68f4138d6832399_prof);
 
     }
 
@@ -103,7 +103,7 @@ class __TwigTemplate_3be364f78b08afc79599d02ede0878dcaa8daf74d50f55d347e8a9ca35e
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'baseBack.html.twig' %}
 
 {% block body %}
     <h1>Typedeplacement edit</h1>

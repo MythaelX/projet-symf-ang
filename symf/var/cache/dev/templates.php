@@ -80,6 +80,7 @@
   'DoctrineBundle:Collector:db.html.twig' => '/home/clement/cir3/projet 2.0/symf/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => '/home/clement/cir3/projet 2.0/symf/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig',
   'BackOfficeBundle:Default:index.html.twig' => '/home/clement/cir3/projet 2.0/symf/src/BackOfficeBundle/Resources/views/Default/index.html.twig',
+  'BackOfficeBundle:Default:stat.html.twig' => '/home/clement/cir3/projet 2.0/symf/src/BackOfficeBundle/Resources/views/Default/stat.html.twig',
   'FrontOfficeBundle:Default:formulaire-trajet.html.twig' => '/home/clement/cir3/projet 2.0/symf/src/FrontOfficeBundle/Resources/views/Default/formulaire-trajet.html.twig',
   'FrontOfficeBundle:Default:index.html.twig' => '/home/clement/cir3/projet 2.0/symf/src/FrontOfficeBundle/Resources/views/Default/index.html.twig',
   'FrontOfficeBundle:Default:profil.html.twig' => '/home/clement/cir3/projet 2.0/symf/src/FrontOfficeBundle/Resources/views/Default/profil.html.twig',

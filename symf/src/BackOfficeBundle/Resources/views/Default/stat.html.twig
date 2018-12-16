@@ -34,7 +34,26 @@ Nombre d'utilisateur et de kilometre par societe :
         <tr>
             <td>{{ instance.societe }}</a></td>
             <td>{{ instance.nombre_utilisateur }}</td>
-            <td>{{ instance.kilometre }}</td>
+            <td>{{ instance.nombre_kilometre|round(2, 'floor') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<div>
+nombre de km par mois et par utilisateur par societe :
+<table>
+    <thead>
+        <tr>
+            <th>Societe</th>
+            <th>nombre de kilometre/utilisateur </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for instance in stat_societe_kilo_user %}
+        <tr>
+            <td>{{ instance.societe }}</a></td>
+            <td>{{ instance.nombre_kilo_utilisateur }}</td>
         </tr>
     {% endfor %}
     </tbody>

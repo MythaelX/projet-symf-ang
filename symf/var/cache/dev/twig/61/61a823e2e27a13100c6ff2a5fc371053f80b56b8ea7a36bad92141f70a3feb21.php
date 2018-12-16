@@ -8,7 +8,7 @@ class __TwigTemplate_511c8c4b1640a44ecac2101b2ef6c50b67fde0118e406a1be84dc866f92
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":typedeplacement:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("baseBack.html.twig", ":typedeplacement:new.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -16,25 +16,25 @@ class __TwigTemplate_511c8c4b1640a44ecac2101b2ef6c50b67fde0118e406a1be84dc866f92
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "baseBack.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3c93549fe3dd9814a0447d491a97ad215bb795688857418bbcf8f870630ff640 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3c93549fe3dd9814a0447d491a97ad215bb795688857418bbcf8f870630ff640->enter($__internal_3c93549fe3dd9814a0447d491a97ad215bb795688857418bbcf8f870630ff640_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":typedeplacement:new.html.twig"));
+        $__internal_6f442c920061c91edf11bd1797b70b53505facd0af47043693c559991a5dfdec = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6f442c920061c91edf11bd1797b70b53505facd0af47043693c559991a5dfdec->enter($__internal_6f442c920061c91edf11bd1797b70b53505facd0af47043693c559991a5dfdec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":typedeplacement:new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3c93549fe3dd9814a0447d491a97ad215bb795688857418bbcf8f870630ff640->leave($__internal_3c93549fe3dd9814a0447d491a97ad215bb795688857418bbcf8f870630ff640_prof);
+        $__internal_6f442c920061c91edf11bd1797b70b53505facd0af47043693c559991a5dfdec->leave($__internal_6f442c920061c91edf11bd1797b70b53505facd0af47043693c559991a5dfdec_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_03163f7ea4e6ab8a3cf56e8e02d2ee146195b3a978216f8b6aa9406735f749c6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_03163f7ea4e6ab8a3cf56e8e02d2ee146195b3a978216f8b6aa9406735f749c6->enter($__internal_03163f7ea4e6ab8a3cf56e8e02d2ee146195b3a978216f8b6aa9406735f749c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_27b6ca040a6d0094af378e5b68756346d344971eaac94582e98dd719a0a1592c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_27b6ca040a6d0094af378e5b68756346d344971eaac94582e98dd719a0a1592c->enter($__internal_27b6ca040a6d0094af378e5b68756346d344971eaac94582e98dd719a0a1592c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Typedeplacement creation</h1>
@@ -63,7 +63,7 @@ class __TwigTemplate_511c8c4b1640a44ecac2101b2ef6c50b67fde0118e406a1be84dc866f92
     </ul>
 ";
         
-        $__internal_03163f7ea4e6ab8a3cf56e8e02d2ee146195b3a978216f8b6aa9406735f749c6->leave($__internal_03163f7ea4e6ab8a3cf56e8e02d2ee146195b3a978216f8b6aa9406735f749c6_prof);
+        $__internal_27b6ca040a6d0094af378e5b68756346d344971eaac94582e98dd719a0a1592c->leave($__internal_27b6ca040a6d0094af378e5b68756346d344971eaac94582e98dd719a0a1592c_prof);
 
     }
 
@@ -92,7 +92,7 @@ class __TwigTemplate_511c8c4b1640a44ecac2101b2ef6c50b67fde0118e406a1be84dc866f92
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'baseBack.html.twig' %}
 
 {% block body %}
     <h1>Typedeplacement creation</h1>

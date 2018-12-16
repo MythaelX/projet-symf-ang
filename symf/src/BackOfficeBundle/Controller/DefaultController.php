@@ -18,6 +18,7 @@ class DefaultController extends Controller
       $em = $this->getDoctrine()->getManager();
       $stat_ville_user = $em->getRepository('BackOfficeBundle:User')->findAllUtilisateurByVille();
       $stat_societe_user = $em->getRepository('BackOfficeBundle:User')->findAllUtilisateurAndKilometreBySociete();
-      return $this->render('BackOfficeBundle:Default:stat.html.twig',array('stat_ville_user' => $stat_ville_user,'stat_societe_user' => $stat_societe_user));
+      $stat_societe_kilo_user = $em->getRepository('BackOfficeBundle:User')->findKilometreMoisBySocieteAndUtilisateur();
+      return $this->render('BackOfficeBundle:Default:stat.html.twig',array('stat_ville_user' => $stat_ville_user,'stat_societe_user' => $stat_societe_user,'stat_societe_kilo_user' => $stat_societe_kilo_user));
     }
 }

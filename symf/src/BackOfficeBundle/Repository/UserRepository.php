@@ -12,22 +12,31 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
 {
   public function findAllUtilisateurByVille()
     {
-        return $this->getEntityManager()->createQuery('Select v.ville ,COUNT(i) nombre_utilisateur FROM BackOfficeBundle:user i INNER JOIN BackOfficeBundle:ville v WITH i.ville = v.id GROUP BY i.ville')->getResult();
+      return $this->getEntityManager()->createQuery('Select v.ville ,COUNT(u) nombre_utilisateur FROM BackOfficeBundle:user u INNER JOIN BackOfficeBundle:ville v WITH u.ville = v.id GROUP BY u.ville')->getResult();
     }
-    public function findAllUtilisateurAndKilometreBySociete()
-      {
-          return $this->getEntityManager()->createQuery('Select s.societe,
-          (Select COUNT(i2) nombre FROM BackOfficeBundle:user i2 INNER JOIN BackOfficeBundle:societe s2 WITH i2.societe = s2.id GROUP BY i2.societe) AS nombre_utilisateur,
-          SUM(dj.nbKm) kilometre
-          FROM BackOfficeBundle:user i, BackOfficeBundle:societe s,BackOfficeBundle:DeplacementJour dj, BackOfficeBundle:Deplacement d
-          Where i.societe = s.id AND d.user=i.id AND d.id=dj.deplacement
-          GROUP BY i.societe')->getResult();
-      }
-// sql
-//SELECT societe,
-// (Select COUNT(*) nombre FROM user i INNER JOIN societe s ON i.societe_id = s.id GROUP BY i.societe_id) AS Nombre_utilisateur,
-// SUM(dj.nb_km)
-// FROM user i, societe s,deplacement_jour dj, deplacement d
-// Where i.societe_id = s.id AND d.user_id=i.id AND d.id=dj.deplacement_id
-// GROUP BY i.societe_id
+  public function findAllUtilisateurAndKilometreBySociete()
+    {
+      return $this->getEntityManager()->createQuery('Select s.societe,sum(dj.nbKm) nombre_kilometre, COUNT(DISTINCT u.id) nombre_utilisateur
+        FROM BackOfficeBundle:DeplacementJour dj, BackOfficeBundle:Deplacement d,BackOfficeBundle:user u,BackOfficeBundle:societe s
+        WHERE dj.deplacement=d.id AND d.user=u.id AND s.id=u.societe
+        GROUP BY s.id')->getResult();
+    }
+    //En sql normal :
+    // SELECT s.societe,ROUND(sum(dj.nb_km), 2) nombre_kilometre, COUNT(DISTINCT u.id) nombre_utilisateur
+    // FROM deplacement_jour dj, deplacement d,user u,societe s
+    // WHERE dj.deplacement_id=d.id AND d.user_id=u.id AND s.id=u.societe_id
+    // GROUP BY s.id
+  public function findKilometreMoisBySocieteAndUtilisateur()
+    {
+      $annee_en_cour=date("Y",time());
+      return $this->getEntityManager()->createQuery('Select s.societe,((sum(dj.nbKm)/COUNT(DISTINCT u.id))/COUNT(DISTINCT d.id)) nombre_kilo_utilisateur , COUNT(DISTINCT u.id) nombre_utilisateur
+        FROM BackOfficeBundle:DeplacementJour dj, BackOfficeBundle:Deplacement d,BackOfficeBundle:user u,BackOfficeBundle:societe s
+        WHERE dj.deplacement=d.id AND d.user=u.id AND s.id=u.societe AND d.annee='.$annee_en_cour.'
+        GROUP BY s.id')->getResult();
+    }
+    //En sql normal :
+    // SELECT s.societe,ROUND(((sum(dj.nb_km)/COUNT(DISTINCT u.id))/COUNT(DISTINCT d.id)), 2) nombre_kilo_utilisateur
+    // FROM deplacement_jour dj, deplacement d,user u,societe s
+    // WHERE dj.deplacement_id=d.id AND d.user_id=u.id AND s.id=u.societe_id AND d.annee=YEAR(NOW())
+    // GROUP BY s.id
 }

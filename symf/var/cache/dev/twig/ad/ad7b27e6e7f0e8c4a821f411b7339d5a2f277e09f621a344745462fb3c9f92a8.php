@@ -8,7 +8,7 @@ class __TwigTemplate_5b522da0f568e4822fb0c7e1261cfc39e8f429a408328b5ebdbf3328a63
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":deplacementjour:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("baseBack.html.twig", ":deplacementjour:edit.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -16,25 +16,25 @@ class __TwigTemplate_5b522da0f568e4822fb0c7e1261cfc39e8f429a408328b5ebdbf3328a63
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "baseBack.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0649cb5c8b53c6b3682a755bfe33f8602bdd84ec7fb87f6a07285f9617082df5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0649cb5c8b53c6b3682a755bfe33f8602bdd84ec7fb87f6a07285f9617082df5->enter($__internal_0649cb5c8b53c6b3682a755bfe33f8602bdd84ec7fb87f6a07285f9617082df5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":deplacementjour:edit.html.twig"));
+        $__internal_782f6a9d81f420b96553dea77d1a510ecc4b9541dc1eb30baaad1ef4046e8e3d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_782f6a9d81f420b96553dea77d1a510ecc4b9541dc1eb30baaad1ef4046e8e3d->enter($__internal_782f6a9d81f420b96553dea77d1a510ecc4b9541dc1eb30baaad1ef4046e8e3d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":deplacementjour:edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0649cb5c8b53c6b3682a755bfe33f8602bdd84ec7fb87f6a07285f9617082df5->leave($__internal_0649cb5c8b53c6b3682a755bfe33f8602bdd84ec7fb87f6a07285f9617082df5_prof);
+        $__internal_782f6a9d81f420b96553dea77d1a510ecc4b9541dc1eb30baaad1ef4046e8e3d->leave($__internal_782f6a9d81f420b96553dea77d1a510ecc4b9541dc1eb30baaad1ef4046e8e3d_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_e110130c19c33ac6783b50c0b4382904df0998040e90fdabb48ea3e93f059417 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e110130c19c33ac6783b50c0b4382904df0998040e90fdabb48ea3e93f059417->enter($__internal_e110130c19c33ac6783b50c0b4382904df0998040e90fdabb48ea3e93f059417_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b4a56743bb966fd04561666bca1287d9b049c4462a36d6f9685912741e03155c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b4a56743bb966fd04561666bca1287d9b049c4462a36d6f9685912741e03155c->enter($__internal_b4a56743bb966fd04561666bca1287d9b049c4462a36d6f9685912741e03155c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Deplacementjour edit</h1>
@@ -74,7 +74,7 @@ class __TwigTemplate_5b522da0f568e4822fb0c7e1261cfc39e8f429a408328b5ebdbf3328a63
     </ul>
 ";
         
-        $__internal_e110130c19c33ac6783b50c0b4382904df0998040e90fdabb48ea3e93f059417->leave($__internal_e110130c19c33ac6783b50c0b4382904df0998040e90fdabb48ea3e93f059417_prof);
+        $__internal_b4a56743bb966fd04561666bca1287d9b049c4462a36d6f9685912741e03155c->leave($__internal_b4a56743bb966fd04561666bca1287d9b049c4462a36d6f9685912741e03155c_prof);
 
     }
 
@@ -103,7 +103,7 @@ class __TwigTemplate_5b522da0f568e4822fb0c7e1261cfc39e8f429a408328b5ebdbf3328a63
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'baseBack.html.twig' %}
 
 {% block body %}
     <h1>Deplacementjour edit</h1>

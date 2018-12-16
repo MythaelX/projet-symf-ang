@@ -15,8 +15,8 @@ class __TwigTemplate_808d4dc9b68ea87481d98ba08d0b92f8b474c111053bead4ef9bc2ee861
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c3b7d7e846394965e37c27bdb84916f73f5056a30ce9f8e71bfa4749e0f33b47 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c3b7d7e846394965e37c27bdb84916f73f5056a30ce9f8e71bfa4749e0f33b47->enter($__internal_c3b7d7e846394965e37c27bdb84916f73f5056a30ce9f8e71bfa4749e0f33b47_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Framework/Form/choice_widget.html.php"));
+        $__internal_e7f4e24e1964d4ce674f792c77d39015586976869fc44ea3277ef8d8ae0eb628 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e7f4e24e1964d4ce674f792c77d39015586976869fc44ea3277ef8d8ae0eb628->enter($__internal_e7f4e24e1964d4ce674f792c77d39015586976869fc44ea3277ef8d8ae0eb628_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Framework/Form/choice_widget.html.php"));
 
         // line 1
         echo "<?php if (\$expanded): ?>
@@ -26,7 +26,7 @@ class __TwigTemplate_808d4dc9b68ea87481d98ba08d0b92f8b474c111053bead4ef9bc2ee861
 <?php endif ?>
 ";
         
-        $__internal_c3b7d7e846394965e37c27bdb84916f73f5056a30ce9f8e71bfa4749e0f33b47->leave($__internal_c3b7d7e846394965e37c27bdb84916f73f5056a30ce9f8e71bfa4749e0f33b47_prof);
+        $__internal_e7f4e24e1964d4ce674f792c77d39015586976869fc44ea3277ef8d8ae0eb628->leave($__internal_e7f4e24e1964d4ce674f792c77d39015586976869fc44ea3277ef8d8ae0eb628_prof);
 
     }
 

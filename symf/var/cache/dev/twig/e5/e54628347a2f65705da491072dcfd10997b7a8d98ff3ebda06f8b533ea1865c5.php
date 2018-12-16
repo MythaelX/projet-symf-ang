@@ -21,20 +21,20 @@ class __TwigTemplate_180e6c5c21f0fef558ee92a6b335b05c6bfba94573e1c76d49a1be91cc9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_37c926ee221cfbc4eda3c9f5c3207871ff335d04d7ccabe7d3460f42c1e79383 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_37c926ee221cfbc4eda3c9f5c3207871ff335d04d7ccabe7d3460f42c1e79383->enter($__internal_37c926ee221cfbc4eda3c9f5c3207871ff335d04d7ccabe7d3460f42c1e79383_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:stat.html.twig"));
+        $__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951->enter($__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:stat.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_37c926ee221cfbc4eda3c9f5c3207871ff335d04d7ccabe7d3460f42c1e79383->leave($__internal_37c926ee221cfbc4eda3c9f5c3207871ff335d04d7ccabe7d3460f42c1e79383_prof);
+        $__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951->leave($__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_b180252652a03910c8f56f5d19e6c7dfa347c97b35bd88260d1ea41823f1ad4c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b180252652a03910c8f56f5d19e6c7dfa347c97b35bd88260d1ea41823f1ad4c->enter($__internal_b180252652a03910c8f56f5d19e6c7dfa347c97b35bd88260d1ea41823f1ad4c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050->enter($__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "<div>
@@ -100,7 +100,7 @@ Nombre d'utilisateur et de kilometre par societe :
             echo "</td>
             <td>";
             // line 37
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "kilometre", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_round($this->getAttribute($context["instance"], "nombre_kilometre", array()), 2, "floor"), "html", null, true);
             echo "</td>
         </tr>
     ";
@@ -112,9 +112,44 @@ Nombre d'utilisateur et de kilometre par societe :
         echo "    </tbody>
 </table>
 </div>
+<div>
+nombre de km par mois et par utilisateur par societe :
+<table>
+    <thead>
+        <tr>
+            <th>Societe</th>
+            <th>nombre de kilometre/utilisateur </th>
+        </tr>
+    </thead>
+    <tbody>
+    ";
+        // line 53
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["stat_societe_kilo_user"] ?? $this->getContext($context, "stat_societe_kilo_user")));
+        foreach ($context['_seq'] as $context["_key"] => $context["instance"]) {
+            // line 54
+            echo "        <tr>
+            <td>";
+            // line 55
+            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "societe", array()), "html", null, true);
+            echo "</a></td>
+            <td>";
+            // line 56
+            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "nombre_kilo_utilisateur", array()), "html", null, true);
+            echo "</td>
+        </tr>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instance'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "    </tbody>
+</table>
+</div>
 ";
         
-        $__internal_b180252652a03910c8f56f5d19e6c7dfa347c97b35bd88260d1ea41823f1ad4c->leave($__internal_b180252652a03910c8f56f5d19e6c7dfa347c97b35bd88260d1ea41823f1ad4c_prof);
+        $__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050->leave($__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050_prof);
 
     }
 
@@ -130,7 +165,7 @@ Nombre d'utilisateur et de kilometre par societe :
 
     public function getDebugInfo()
     {
-        return array (  112 => 40,  103 => 37,  99 => 36,  95 => 35,  92 => 34,  88 => 33,  72 => 19,  63 => 16,  59 => 15,  56 => 14,  52 => 13,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  147 => 59,  138 => 56,  134 => 55,  131 => 54,  127 => 53,  112 => 40,  103 => 37,  99 => 36,  95 => 35,  92 => 34,  88 => 33,  72 => 19,  63 => 16,  59 => 15,  56 => 14,  52 => 13,  40 => 3,  34 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -179,7 +214,26 @@ Nombre d'utilisateur et de kilometre par societe :
         <tr>
             <td>{{ instance.societe }}</a></td>
             <td>{{ instance.nombre_utilisateur }}</td>
-            <td>{{ instance.kilometre }}</td>
+            <td>{{ instance.nombre_kilometre|round(2, 'floor') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<div>
+nombre de km par mois et par utilisateur par societe :
+<table>
+    <thead>
+        <tr>
+            <th>Societe</th>
+            <th>nombre de kilometre/utilisateur </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for instance in stat_societe_kilo_user %}
+        <tr>
+            <td>{{ instance.societe }}</a></td>
+            <td>{{ instance.nombre_kilo_utilisateur }}</td>
         </tr>
     {% endfor %}
     </tbody>
