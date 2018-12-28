@@ -1,16 +1,18 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './app.component';
-//import {HomeComponent} from './home/home.component';
 import {ListComponent} from './list/list.component';
+import {ListForOneComponent} from './list-for-one/list-for-one.component';
 //import {RecupComponent} from './recup/recup.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {DeplacementDetailsComponent} from './deplacement-details/deplacement-details.component';
 
 const appRoutes: Routes = [
-   //{ path: '', component: HomeComponent },
+   { path: '', component: AppComponent },
    { path: 'list', component: ListComponent },
+   { path: 'deplacementdetails/:userId/:year/:month', component: DeplacementDetailsComponent },
    //{ path: 'recup', component: RecupComponent },
-   //{ path: 'recup/:value', component: RecupComponent },
+   { path: 'listforone/:id', component: ListForOneComponent },
    { path: '**', component: NotFoundComponent }
 ];
 

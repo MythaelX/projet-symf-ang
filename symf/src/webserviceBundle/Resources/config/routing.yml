@@ -1,3 +1,15 @@
-webservice_homepage:
+webservice_listAll:
     path:     /
     defaults: { _controller: webserviceBundle:Default:listDeplacementsRest}
+
+webservice_listAllForOneUser:
+    path:     /{id}
+    defaults: { _controller: webserviceBundle:Default:listDeplacementsForOneUserRest}
+
+webservice_getUser:
+    path:     /getuser/{id}
+    defaults: { _controller: webserviceBundle:Default:getUserRest}
+
+webservice_getDeplacementDetails:
+    path:     /getdeplacementdetails/{userId}/{year}/{month}
+    defaults: { _controller: webserviceBundle:Default:getDeplacementDetailsRest}

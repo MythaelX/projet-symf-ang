@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ListForOneComponent } from './list-for-one/list-for-one.component';
+import { DeplacementDetailsComponent } from './deplacement-details/deplacement-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ListForOneComponent,
+    DeplacementDetailsComponent
   ],
   imports: [
     BrowserModule,

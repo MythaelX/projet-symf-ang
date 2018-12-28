@@ -1,0 +1,21 @@
+<p >
+  Déplacements de l'utilisateur : {{name.nom}} - {{name.prenom}} <br>
+</p>
+
+<tr>
+  <th>année</th>
+  <th>mois</th>
+  <th>création</th>
+  <th>mise à jour</th>
+  <th>date de validation</th>
+  <th>validation</th>
+</tr>
+<tr *ngFor = "let line of list">
+  <td>{{line.annee}}</td>
+  <td>{{line.mois | date: 'MMMM'}}</td>
+  <td>{{line.created.date | date: 'yyyy-MM-dd'}}</td>
+  <td>{{line.updated.date | date: 'yyyy-MM-dd'}}</td>
+  <td>{{line.dateValidation.date | date: 'yyyy-MM-dd'}}</td>
+  <td >{{line.validation}}</td>
+  <td><a routerLink='/deplacementdetails/{{name.id}}/{{line.annee}}/{{line.mois}}' routerLinkActive="active">détails</a></td>
+</tr>

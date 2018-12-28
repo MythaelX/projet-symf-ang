@@ -10,12 +10,26 @@ namespace BackOfficeBundle\Repository;
  */
 class DeplacementRepository extends \Doctrine\ORM\EntityRepository{
 
-  public function AllDeplacementsRest(){
-    return $this->getEntityManager()->createQuery('SELECT i FROM BackOfficeBundle:Deplacement i')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+  public function allDeplacementsRest(){
+    return $this->getEntityManager()->createQuery('SELECT i, u.id, u.nom, u.prenom FROM BackOfficeBundle:Deplacement i LEFT JOIN BackOfficeBundle:User u WITH i.user = u.id')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
   }
+  //SELECT i FROM BackOfficeBundle:Deplacement i LEFT JOIN BackOfficeBundle:User u ON u.nom ON i.user = u.id
 /*
-  public function OneDeplacementRest(){
-    return $this->getEntityManager()->createQuery('SELECT i FROM BackOfficeBundle:Deplacement i')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+  public function userForOneDeplacementRest($id){
+    return $this->getEntityManager()->createQuery('SELECT nom, prenom FROM BackOfficeBundle:User WHERE ( SELECT i.user FROM BackOfficeBundle:Deplacement i WHERE i = '.$id.')')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
   }
 */
+public function deplacementsForOneUserRest($id){
+  return $this->getEntityManager()->createQuery('SELECT i FROM BackOfficeBundle:Deplacement i WHERE i.user = '.$id.' ORDER BY i.annee, i.mois')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+}
+
+  public function getUserRest($id){
+    return $this->getEntityManager()->createQuery('SELECT i.nom, i.prenom FROM BackOfficeBundle:User i WHERE i.id = '.$id)->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+  }
+
+  public function getDeplacementDetailsRest($userId, $year, $month){
+    //return $this->getEntityManager()->createQuery('SELECT j FROM BackOfficeBundle:DeplacementJour j INNER JOIN BackOfficeBundle:Deplacement d WITH d.annee = '. $year .'AND d.mois = '. $month .'AND d.user = '. $userId)->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
+    return $this->getEntityManager()->createQuery('SELECT dj FROM BackOfficeBundle:DeplacementJour dj INNER JOIN BackOfficeBundle:Deplacement d WITH dj.deplacement = d WHERE d.user = '. $userId .' AND d.annee = '. $year .' AND d.mois = '. $month.'')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+  }
 }

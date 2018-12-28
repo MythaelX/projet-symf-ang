@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { timeout } from 'q';
+import { isNull } from 'util';
 
 //import { BrowserModule }    from '@angular/platform-browser';
 //import { Observable } from 'rxjs';
@@ -13,19 +15,35 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
-  //articles$: Observable;
-  variable: any;
+  constructor(private httpClient: HttpClient){}
+
+  list: any;
+
   ngOnInit() {
     this.httpClient.get('http://127.0.0.1:8000/api/', {responseType: 'json'}).subscribe(
       (response) => {
-        this.variable = response;
-        console.log('response', this.variable);
+        this.list = this.responseSanitizer(response);
       },
       (error) => {console.log('Erreur ! : ' + error);
       }
     );
   }
 
+
+  responseSanitizer(list: any){
+    list.forEach((element) => {
+      if(isNull(element[0].created)){
+        element[0].created = {date: new Date(null)};
+      }
+
+      if(isNull(element[0].dateValidation)){
+        element[0].dateValidation = {date: new Date(null)};
+      }
+
+      if(isNull(element[0].updated)){
+        element[0].updated = {date: new Date(null)};
+      }
+    });
+    return list;
+  }
 }
-//https://jsonplaceholder.typicode.com/todos/1
