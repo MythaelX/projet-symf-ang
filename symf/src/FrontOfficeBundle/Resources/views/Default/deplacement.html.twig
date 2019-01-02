@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Deplacement du formulaire {{deplacement.id}} liste</h1>
+<div id="tableau">
+    <h1>Liste des déplacements du formulaire : {{deplacement.id}} </h1>
 
     <table>
         <thead>
             <tr>
-                <th>Nbkm</th>
+                <th>Nb de km</th>
                 <th>Montant</th>
                 <th>Jour</th>
                 <th>Date</th>
@@ -25,12 +26,12 @@
                 {% if deplacement.validation==false %}
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('f_deplacementjour_show', { 'id': deplacementJour.id }) }}">show</a>
+                        <li class="center">
+                            <a href="{{ path('f_deplacementjour_show', { 'id': deplacementJour.id }) }}">Détail</a>
                         </li>
 
-                        <li>
-                            <a href="{{ path('f_deplacementjour_edit', { 'id': deplacementJour.id }) }}">edit</a>
+                        <li class="center">
+                            <a href="{{ path('f_deplacementjour_edit', { 'id': deplacementJour.id }) }}">Modifier</a>
                         </li>
 
                     </ul>
@@ -43,8 +44,9 @@
     {% if deplacement.validation==false %}
     <ul>
         <li>
-            <a href="{{ path('f_deplacementjour_new',{ 'id': deplacement.id }) }}">Créer un nouveau déplacement</a>
+            <a href="{{ path('f_deplacementjour_new',{ 'id': deplacement.id }) }}">Créer un nouveau déplacement Jour</a>
         </li>
     </ul>
     {% endif %}
+    </div>
 {% endblock %}

@@ -26,7 +26,8 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
   */
   public function findAllUtilisateurAndKilometreBySociete()
     {
-      return $this->getEntityManager()->createQuery('Select s.societe,sum(dj.nbKm) nombre_kilometre, COUNT(DISTINCT u.id) nombre_utilisateur
+      return $this->getEntityManager()->createQuery('
+        Select s.societe,sum(dj.nbKm) nombre_kilometre, COUNT(DISTINCT u.id) nombre_utilisateur
         FROM BackOfficeBundle:DeplacementJour dj, BackOfficeBundle:Deplacement d,BackOfficeBundle:user u,BackOfficeBundle:societe s
         WHERE dj.deplacement=d.id AND d.user=u.id AND s.id=u.societe
         GROUP BY s.id')->getResult();
@@ -44,14 +45,17 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
   public function findKilometreMoisBySocieteAndUtilisateur()
     {
       $annee_en_cour=date("Y",time());
-      return $this->getEntityManager()->createQuery('Select s.societe,((sum(dj.nbKm)/COUNT(DISTINCT u.id))/COUNT(DISTINCT d.id)) nombre_kilo_utilisateur , COUNT(DISTINCT u.id) nombre_utilisateur
+      return $this->getEntityManager()->createQuery('
+        Select s.societe,u.nom nom_utilisateur,sum(dj.nbKm) nombre_kilo_utilisateur
         FROM BackOfficeBundle:DeplacementJour dj, BackOfficeBundle:Deplacement d,BackOfficeBundle:user u,BackOfficeBundle:societe s
-        WHERE dj.deplacement=d.id AND d.user=u.id AND s.id=u.societe AND d.annee='.$annee_en_cour.'
-        GROUP BY s.id')->getResult();
+        WHERE dj.deplacement=d.id AND d.user=u.id AND s.id=u.societe AND d.annee=2018
+        GROUP BY u.id 
+        ORDER BY s.societe')->getResult();
     }
     //En sql normal :
-    // SELECT s.societe,ROUND(((sum(dj.nb_km)/COUNT(DISTINCT u.id))/COUNT(DISTINCT d.id)), 2) nombre_kilo_utilisateur
-    // FROM deplacement_jour dj, deplacement d,user u,societe s
-    // WHERE dj.deplacement_id=d.id AND d.user_id=u.id AND s.id=u.societe_id AND d.annee=YEAR(NOW())
-    // GROUP BY s.id
+    //SELECT s.societe,u.nom, sum(dj.nb_km) nombre_kilo_utilisateur
+    //FROM deplacement_jour dj, deplacement d,user u,societe s
+    //WHERE dj.deplacement_id=d.id AND d.user_id=u.id AND s.id=u.societe_id AND d.annee=2018
+    //GROUP BY u.id
+    //ORDER BY s.societe
 }

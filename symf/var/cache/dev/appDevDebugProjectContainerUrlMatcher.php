@@ -100,13 +100,34 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // webservice_homepage
-        if (rtrim($pathinfo, '/') === '/api') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'webservice_homepage');
+        if (0 === strpos($pathinfo, '/api')) {
+            // webservice_listAll
+            if (rtrim($pathinfo, '/') === '/api') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'webservice_listAll');
+                }
+
+                return array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::listDeplacementsRestAction',  '_route' => 'webservice_listAll',);
             }
 
-            return array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::listDeplacementsRestAction',  '_route' => 'webservice_homepage',);
+            // webservice_listAllForOneUser
+            if (preg_match('#^/api/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'webservice_listAllForOneUser')), array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::listDeplacementsForOneUserRestAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/api/get')) {
+                // webservice_getUser
+                if (0 === strpos($pathinfo, '/api/getuser') && preg_match('#^/api/getuser/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'webservice_getUser')), array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::getUserRestAction',));
+                }
+
+                // webservice_getDeplacementDetails
+                if (0 === strpos($pathinfo, '/api/getdeplacementdetails') && preg_match('#^/api/getdeplacementdetails/(?P<userId>[^/]++)/(?P<year>[^/]++)/(?P<month>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'webservice_getDeplacementDetails')), array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::getDeplacementDetailsRestAction',));
+                }
+
+            }
+
         }
 
         // front_office_homepage

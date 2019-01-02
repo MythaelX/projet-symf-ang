@@ -1,21 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Deplacementjour edit</h1>
-
+<div id="modifFormulaire">
+    <h1>Modification déplacement jour</h1>
+    <div>
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" class="maxwidth" value="Edit" />
     {{ form_end(edit_form) }}
-
+    </div>
     <ul>
         <li>
-            <a href="{{ path('f_deplacement_show',{ 'id': deplacementJour.deplacement.id }) }}">Back to the list</a>
+            <a href="{{ path('f_deplacement_show',{ 'id': deplacementJour.deplacement.id }) }}">Retour à la liste</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+</div>
 {% endblock %}

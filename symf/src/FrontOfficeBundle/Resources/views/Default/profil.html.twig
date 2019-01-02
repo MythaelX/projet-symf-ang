@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<h1> formulaire </h1>
+<div id="modifProfil" >
+<h1> Modifier son profil </h1>
   {{form_start(form)}}
   {{form_widget(form)}}
   <input type="submit">
   {{form_end(form)}}
+</div>
 {% endblock %}

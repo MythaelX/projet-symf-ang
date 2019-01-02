@@ -21,23 +21,23 @@ class __TwigTemplate_180e6c5c21f0fef558ee92a6b335b05c6bfba94573e1c76d49a1be91cc9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951->enter($__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:stat.html.twig"));
+        $__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836->enter($__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:stat.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951->leave($__internal_1e95c7eff3dbafcdf6c261912998763cc912c97607e0409e5452b4883dd50951_prof);
+        $__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836->leave($__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050->enter($__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1->enter($__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "<div>
+        echo "<div id=\"tableau\">
 Nombre d'utilisateur par ville :
 <table>
     <thead>
@@ -72,7 +72,7 @@ Nombre d'utilisateur par ville :
         echo "    </tbody>
 </table>
 </div>
-<div>
+<div id=\"tableau\">
 Nombre d'utilisateur et de kilometre par societe :
 <table>
     <thead>
@@ -112,29 +112,34 @@ Nombre d'utilisateur et de kilometre par societe :
         echo "    </tbody>
 </table>
 </div>
-<div>
-nombre de km par mois et par utilisateur par societe :
+<div id=\"tableau\">
+Nombre de km par mois et par utilisateur par societe :
 <table>
     <thead>
         <tr>
             <th>Societe</th>
+            <th>Nom utilisateur</th>
             <th>nombre de kilometre/utilisateur </th>
         </tr>
     </thead>
     <tbody>
     ";
-        // line 53
+        // line 54
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["stat_societe_kilo_user"] ?? $this->getContext($context, "stat_societe_kilo_user")));
         foreach ($context['_seq'] as $context["_key"] => $context["instance"]) {
-            // line 54
+            // line 55
             echo "        <tr>
             <td>";
-            // line 55
+            // line 56
             echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "societe", array()), "html", null, true);
             echo "</a></td>
             <td>";
-            // line 56
+            // line 57
+            echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "nom_utilisateur", array()), "html", null, true);
+            echo "</a></td>
+            <td>";
+            // line 58
             echo twig_escape_filter($this->env, $this->getAttribute($context["instance"], "nombre_kilo_utilisateur", array()), "html", null, true);
             echo "</td>
         </tr>
@@ -143,13 +148,14 @@ nombre de km par mois et par utilisateur par societe :
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 61
         echo "    </tbody>
 </table>
 </div>
+
 ";
         
-        $__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050->leave($__internal_6de12732b3ebde2c007dee687456de11509890c153fafaf80c3cfbeaf86c1050_prof);
+        $__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1->leave($__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1_prof);
 
     }
 
@@ -165,7 +171,7 @@ nombre de km par mois et par utilisateur par societe :
 
     public function getDebugInfo()
     {
-        return array (  147 => 59,  138 => 56,  134 => 55,  131 => 54,  127 => 53,  112 => 40,  103 => 37,  99 => 36,  95 => 35,  92 => 34,  88 => 33,  72 => 19,  63 => 16,  59 => 15,  56 => 14,  52 => 13,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  152 => 61,  143 => 58,  139 => 57,  135 => 56,  132 => 55,  128 => 54,  112 => 40,  103 => 37,  99 => 36,  95 => 35,  92 => 34,  88 => 33,  72 => 19,  63 => 16,  59 => 15,  56 => 14,  52 => 13,  40 => 3,  34 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -180,7 +186,7 @@ nombre de km par mois et par utilisateur par societe :
     {
         return new Twig_Source("{% extends 'baseBack.html.twig' %}
 {% block body %}
-<div>
+<div id=\"tableau\">
 Nombre d'utilisateur par ville :
 <table>
     <thead>
@@ -199,7 +205,7 @@ Nombre d'utilisateur par ville :
     </tbody>
 </table>
 </div>
-<div>
+<div id=\"tableau\">
 Nombre d'utilisateur et de kilometre par societe :
 <table>
     <thead>
@@ -220,12 +226,13 @@ Nombre d'utilisateur et de kilometre par societe :
     </tbody>
 </table>
 </div>
-<div>
-nombre de km par mois et par utilisateur par societe :
+<div id=\"tableau\">
+Nombre de km par mois et par utilisateur par societe :
 <table>
     <thead>
         <tr>
             <th>Societe</th>
+            <th>Nom utilisateur</th>
             <th>nombre de kilometre/utilisateur </th>
         </tr>
     </thead>
@@ -233,12 +240,14 @@ nombre de km par mois et par utilisateur par societe :
     {% for instance in stat_societe_kilo_user %}
         <tr>
             <td>{{ instance.societe }}</a></td>
+            <td>{{ instance.nom_utilisateur }}</a></td>
             <td>{{ instance.nombre_kilo_utilisateur }}</td>
         </tr>
     {% endfor %}
     </tbody>
 </table>
 </div>
+
 {% endblock %}
 ", "BackOfficeBundle:Default:stat.html.twig", "/home/clement/cir3/projet 2.0/symf/src/BackOfficeBundle/Resources/views/Default/stat.html.twig");
     }

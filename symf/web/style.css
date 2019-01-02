@@ -1,9 +1,11 @@
 body{
-margin:0;
+    margin:0;
+}
+div#header ul{
+    margin:0;
 }
 ul {
     list-style-type: none;
-    margin: 0;
     margin-bottom:3%;
     padding: 0;
     overflow: hidden;
@@ -25,30 +27,117 @@ li a {
 li a:hover {
     background-color: #111;
 }
-div#tableau{
-margin-top:5%;
-margin-right:10%;
-margin-left:10%;
+
+div#tableau{    
+    margin-top:5%;
+    margin-right:10%;
+    margin-left:10%;
 }
+
+h1 {
+ width:auto;
+ border-bottom:3px dashed black;
+ }
+ 
 table {
+    border-width:3px 4px 4px 4px;
+    border-style:solid;
     margin-top:1%;
     border-collapse: collapse;
     width: 100%;
 }
 
 th, td {
+    
     text-align: left;
     padding: 8px;
+    text-align:center;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
+    
     background-color: #4CAF50;
     color: white;
 }
 
 span#bienvenue{
     margin-left:3%;
+    font-size: 40px;
     text-align:center;
+}
+
+div#modifProfil{
+    font-size: 40px;
+    position: absolute; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+}
+
+div#modifProfil label{
+ margin-right:40px;   
+}
+
+div#modifProfil input{
+margin-right:20px;
+font-size: 30px;
+float:right;    
+}
+
+div#modifProfil h1{
+ text-align:center;
+}
+
+div#modifFormulaire h1{
+    text-align:center;
+}
+
+div#modifFormulaire{
+    width:60%;
+    font-size: 30px;
+    position: absolute; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+}
+
+div#modifFormulaire input, div#modifFormulaire select{
+margin-right:0px;
+font-size: 20px;
+float:right;    
+}
+
+div#modifFormulaire div{
+font-size: 40px;   
+}
+div#modifFormulaire input[type=submit]{
+    font-size: 25px;
+    height:100%;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+    border: 0px;
+    background-color: #333;
+    float:none;
+}
+div#modifFormulaire input[type=submit]:hover {
+    background-color: #111;
+}
+div#modifFormulaire ul{
+margin-top: 60 px;  
+}
+.center{
+float:none;
+width:auto;
+}
+
+.center a{
+    padding:10px 2px;
+}
+
+.maxwidth{
+    width:100%;
+    float:none;
 }

@@ -21,51 +21,52 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_204028306408c31099e0e2f6269851b27219fa42b84103c669d3cc35c26839f7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_204028306408c31099e0e2f6269851b27219fa42b84103c669d3cc35c26839f7->enter($__internal_204028306408c31099e0e2f6269851b27219fa42b84103c669d3cc35c26839f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:deplacementjour:show.html.twig"));
+        $__internal_8f32ce905252554bb7365c79e4d8f7cb37b69fb3577381426ae5bf1a58dbe2be = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8f32ce905252554bb7365c79e4d8f7cb37b69fb3577381426ae5bf1a58dbe2be->enter($__internal_8f32ce905252554bb7365c79e4d8f7cb37b69fb3577381426ae5bf1a58dbe2be_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:deplacementjour:show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_204028306408c31099e0e2f6269851b27219fa42b84103c669d3cc35c26839f7->leave($__internal_204028306408c31099e0e2f6269851b27219fa42b84103c669d3cc35c26839f7_prof);
+        $__internal_8f32ce905252554bb7365c79e4d8f7cb37b69fb3577381426ae5bf1a58dbe2be->leave($__internal_8f32ce905252554bb7365c79e4d8f7cb37b69fb3577381426ae5bf1a58dbe2be_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_62cb6511b9a4398ca78489a1dc41a0bff1254af171a7d79f9c8592e7d6ecc071 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_62cb6511b9a4398ca78489a1dc41a0bff1254af171a7d79f9c8592e7d6ecc071->enter($__internal_62cb6511b9a4398ca78489a1dc41a0bff1254af171a7d79f9c8592e7d6ecc071_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_239adc7218a635463e2bdc9d4ac02b714c888bab616a1ce605e270ebf6798dfd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_239adc7218a635463e2bdc9d4ac02b714c888bab616a1ce605e270ebf6798dfd->enter($__internal_239adc7218a635463e2bdc9d4ac02b714c888bab616a1ce605e270ebf6798dfd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Deplacementjour</h1>
+        echo "<div id=\"modifFormulaire\">
+    <h1>Déplacement jour</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Nbkm</th>
                 <td>";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "nbKm", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Montant</th>
                 <td>";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "montant", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Jour</th>
                 <td>";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "jour", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Date</th>
                 <td>";
-        // line 22
+        // line 23
         if ($this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "date", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "date", array()), "Y-m-d"), "html", null, true);
         }
@@ -74,7 +75,7 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
             <tr>
                 <th>Created</th>
                 <td>";
-        // line 26
+        // line 27
         if ($this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "created", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "created", array()), "Y-m-d H:i:s"), "html", null, true);
         }
@@ -83,7 +84,7 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
             <tr>
                 <th>Updated</th>
                 <td>";
-        // line 30
+        // line 31
         if ($this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "updated", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "updated", array()), "Y-m-d H:i:s"), "html", null, true);
         }
@@ -92,7 +93,7 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 34
+        // line 35
         echo twig_escape_filter($this->env, $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "id", array()), "html", null, true);
         echo "</td>
             </tr>
@@ -102,31 +103,32 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
     <ul>
         <li>
             <a href=\"";
-        // line 41
+        // line 42
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("f_deplacement_show", array("id" => $this->getAttribute($this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "deplacement", array()), "id", array()))), "html", null, true);
-        echo "\">Back to the list</a>
+        echo "\">Retour à la liste</a>
         </li>
         <li>
             <a href=\"";
-        // line 44
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("deplacementjour_edit", array("id" => $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "id", array()))), "html", null, true);
-        echo "\">Edit</a>
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("f_deplacementjour_edit", array("id" => $this->getAttribute(($context["deplacementJour"] ?? $this->getContext($context, "deplacementJour")), "id", array()))), "html", null, true);
+        echo "\">Modifier</a>
         </li>
         <li>
             ";
-        // line 47
+        // line 48
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
         echo "
-                <input type=\"submit\" value=\"Delete\">
+                <input type=\"submit\" value=\"Supprimer\">
             ";
-        // line 49
+        // line 50
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
         echo "
         </li>
     </ul>
+</div>
 ";
         
-        $__internal_62cb6511b9a4398ca78489a1dc41a0bff1254af171a7d79f9c8592e7d6ecc071->leave($__internal_62cb6511b9a4398ca78489a1dc41a0bff1254af171a7d79f9c8592e7d6ecc071_prof);
+        $__internal_239adc7218a635463e2bdc9d4ac02b714c888bab616a1ce605e270ebf6798dfd->leave($__internal_239adc7218a635463e2bdc9d4ac02b714c888bab616a1ce605e270ebf6798dfd_prof);
 
     }
 
@@ -142,7 +144,7 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
 
     public function getDebugInfo()
     {
-        return array (  123 => 49,  118 => 47,  112 => 44,  106 => 41,  96 => 34,  87 => 30,  78 => 26,  69 => 22,  62 => 18,  55 => 14,  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  124 => 50,  119 => 48,  113 => 45,  107 => 42,  97 => 35,  88 => 31,  79 => 27,  70 => 23,  63 => 19,  56 => 15,  49 => 11,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -158,7 +160,8 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Deplacementjour</h1>
+<div id=\"modifFormulaire\">
+    <h1>Déplacement jour</h1>
 
     <table>
         <tbody>
@@ -195,17 +198,18 @@ class __TwigTemplate_8b728464ba56593dd76caeaae0cbf1ffd06b9a4faea7a2beadce70d886f
 
     <ul>
         <li>
-            <a href=\"{{ path('f_deplacement_show',{ 'id': deplacementJour.deplacement.id }) }}\">Back to the list</a>
+            <a href=\"{{ path('f_deplacement_show',{ 'id': deplacementJour.deplacement.id }) }}\">Retour à la liste</a>
         </li>
         <li>
-            <a href=\"{{ path('deplacementjour_edit', { 'id': deplacementJour.id }) }}\">Edit</a>
+            <a href=\"{{ path('f_deplacementjour_edit', { 'id': deplacementJour.id }) }}\">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type=\"submit\" value=\"Delete\">
+                <input type=\"submit\" value=\"Supprimer\">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+</div>
 {% endblock %}
 ", "FrontOfficeBundle:deplacementjour:show.html.twig", "/home/clement/cir3/projet 2.0/symf/src/FrontOfficeBundle/Resources/views/deplacementjour/show.html.twig");
     }

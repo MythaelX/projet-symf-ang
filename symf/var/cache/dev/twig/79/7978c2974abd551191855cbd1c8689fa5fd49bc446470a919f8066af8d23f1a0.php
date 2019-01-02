@@ -21,20 +21,20 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_55205e1c6f21fe9b2b2e5d905a9172a6ca40ba33d0112586aad898fd2d104225 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_55205e1c6f21fe9b2b2e5d905a9172a6ca40ba33d0112586aad898fd2d104225->enter($__internal_55205e1c6f21fe9b2b2e5d905a9172a6ca40ba33d0112586aad898fd2d104225_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:index.html.twig"));
+        $__internal_81a8ac098f21e54b5212e11ccc3b8d985ab49a978bc3321201d6e257daaed75b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_81a8ac098f21e54b5212e11ccc3b8d985ab49a978bc3321201d6e257daaed75b->enter($__internal_81a8ac098f21e54b5212e11ccc3b8d985ab49a978bc3321201d6e257daaed75b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_55205e1c6f21fe9b2b2e5d905a9172a6ca40ba33d0112586aad898fd2d104225->leave($__internal_55205e1c6f21fe9b2b2e5d905a9172a6ca40ba33d0112586aad898fd2d104225_prof);
+        $__internal_81a8ac098f21e54b5212e11ccc3b8d985ab49a978bc3321201d6e257daaed75b->leave($__internal_81a8ac098f21e54b5212e11ccc3b8d985ab49a978bc3321201d6e257daaed75b_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_89b012bca4d62279db3b7a9ed3647b74914e4e96ee7a6e22236ca10d9219a32d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_89b012bca4d62279db3b7a9ed3647b74914e4e96ee7a6e22236ca10d9219a32d->enter($__internal_89b012bca4d62279db3b7a9ed3647b74914e4e96ee7a6e22236ca10d9219a32d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c3e830795628a7c8542a296e5ec8ccaba1c33d791ddad9fecacdb5fb21cb688a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c3e830795628a7c8542a296e5ec8ccaba1c33d791ddad9fecacdb5fb21cb688a->enter($__internal_c3e830795628a7c8542a296e5ec8ccaba1c33d791ddad9fecacdb5fb21cb688a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "  <span id=\"bienvenue\">Bienvenue ! ";
@@ -87,11 +87,11 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
             echo "</td>
             <td>
                 <ul>
-                    <li>
+                    <li class=\"center\">
                         <a href=\"";
             // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("f_deplacement_show", array("id" => $this->getAttribute($context["deplacement"], "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Voir</a>
                     </li>
                 </ul>
             </td>
@@ -115,7 +115,7 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
 </ul>
 ";
         
-        $__internal_89b012bca4d62279db3b7a9ed3647b74914e4e96ee7a6e22236ca10d9219a32d->leave($__internal_89b012bca4d62279db3b7a9ed3647b74914e4e96ee7a6e22236ca10d9219a32d_prof);
+        $__internal_c3e830795628a7c8542a296e5ec8ccaba1c33d791ddad9fecacdb5fb21cb688a->leave($__internal_c3e830795628a7c8542a296e5ec8ccaba1c33d791ddad9fecacdb5fb21cb688a_prof);
 
     }
 
@@ -169,8 +169,8 @@ class __TwigTemplate_30ab9f87eae39a081d1dfe883ae76f2297c765160727458b5a29a7d5944
             <td>{{ deplacement.id }}</td>
             <td>
                 <ul>
-                    <li>
-                        <a href=\"{{ path('f_deplacement_show', { 'id': deplacement.id }) }}\">show</a>
+                    <li class=\"center\">
+                        <a href=\"{{ path('f_deplacement_show', { 'id': deplacement.id }) }}\">Voir</a>
                     </li>
                 </ul>
             </td>
