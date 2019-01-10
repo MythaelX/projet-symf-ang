@@ -1,0 +1,21 @@
+<h2> Formulaire DJour </h2>
+<div>
+  <form (ngSubmit)="register()">
+    <div>
+      <label>nbKm</label><input name="nbKm" [(ngModel)]="deplacementJour.nbKm" >
+    </div>
+    <div>    <div>
+      <label>Type</label><input name="type" [(ngModel)]="deplacementJour.type">
+    </div>
+      <label>montant</label><input name="montant" [(ngModel)]="deplacementJour.montant">
+    </div>
+    <div>
+      <label>jour</label><input name="jour" [(ngModel)]="deplacementJour.jour">
+    </div>
+    <select *ngFor = "let line of list">
+      <option value="{{line.type}}">{{line.type}}</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>

@@ -6,10 +6,14 @@ import {ListForOneComponent} from './list-for-one/list-for-one.component';
 //import {RecupComponent} from './recup/recup.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {DeplacementDetailsComponent} from './deplacement-details/deplacement-details.component';
+import { FormDeplacementComponent } from './form-deplacement/form-deplacement.component';
+import { FormDeplacementJourComponent } from './form-deplacement-jour/form-deplacement-jour.component';
 
 const appRoutes: Routes = [
    { path: '', component: AppComponent },
    { path: 'list', component: ListComponent },
+   { path: 'formDeplacement', component: FormDeplacementComponent },
+   { path: 'formDeplacementJour', component: FormDeplacementJourComponent },
    { path: 'deplacementdetails/:userId/:year/:month', component: DeplacementDetailsComponent },
    //{ path: 'recup', component: RecupComponent },
    { path: 'listforone/:id', component: ListForOneComponent },
