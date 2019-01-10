@@ -4,6 +4,7 @@ namespace webserviceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BackOfficeBundle\Entity\Deplacement;
+use BackOfficeBundle\Entity\TypeDeplacement;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -23,21 +24,8 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager()->getRepository('BackOfficeBundle:Deplacement')->allDeplacementsRest();
         $response->setContent(json_encode($em));
         return $response;
-        //$deplacements = $em;
-        //$deplacements=null;
-        //return new JsonResponse([$deplacements]);
     }
-/*
-    public function userForOneDeplacementRestAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager()->getRepository('BackOfficeBundle:Deplacement')->userForOneDeplacementRest($id);
-        $response = new Response();
-        $response->setContent(json_encode($em));
-        $response->headers->set('Content-Type', 'application/json');
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        return $response;
-    }
-*/
+
     public function listDeplacementsForOneUserRestAction(Request $request, $id)
     {
         $response = new Response();
@@ -64,6 +52,16 @@ class DefaultController extends Controller
         $response->headers->set('Content-Type', 'application/json');
         $response->headers->set('Access-Control-Allow-Origin', '*');
         $em = $this->getDoctrine()->getManager()->getRepository('BackOfficeBundle:Deplacement')->getDeplacementDetailsRest($userId, $year, $month);
+        $response->setContent(json_encode($em));
+        return $response;
+    }
+
+    public function getTypeDeplacementRestAction(Request $request)
+    {
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $em = $this->getDoctrine()->getManager()->getRepository('BackOfficeBundle:TypeDeplacement')->getTypeDeplacementRest();
         $response->setContent(json_encode($em));
         return $response;
     }

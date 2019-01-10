@@ -13,3 +13,8 @@ webservice_getUser:
 webservice_getDeplacementDetails:
     path:     /getdeplacementdetails/{userId}/{year}/{month}
     defaults: { _controller: webserviceBundle:Default:getDeplacementDetailsRest}
+
+webservice_getTypeDeplacement:
+    path:     /getTypeDeplacement/
+    defaults: { _controller: webserviceBundle:Default:getTypeDeplacementRest}
+

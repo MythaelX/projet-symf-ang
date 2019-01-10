@@ -10,4 +10,7 @@ namespace BackOfficeBundle\Repository;
  */
 class Type_deplacementRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function getTypeDeplacementRest(){
+    return $this->getEntityManager()->createQuery('SELECT i.typeDeplacement FROM BackOfficeBundle:TypeDeplacement i')->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+  }
 }

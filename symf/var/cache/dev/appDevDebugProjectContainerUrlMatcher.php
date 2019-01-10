@@ -126,6 +126,15 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'webservice_getDeplacementDetails')), array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::getDeplacementDetailsRestAction',));
                 }
 
+                // webservice_getTypeDeplacement
+                if (rtrim($pathinfo, '/') === '/api/getTypeDeplacement') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'webservice_getTypeDeplacement');
+                    }
+
+                    return array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::getTypeDeplacementRestAction',  '_route' => 'webservice_getTypeDeplacement',);
+                }
+
             }
 
         }
