@@ -21,20 +21,20 @@ class __TwigTemplate_180e6c5c21f0fef558ee92a6b335b05c6bfba94573e1c76d49a1be91cc9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836->enter($__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:stat.html.twig"));
+        $__internal_24055fe998c3171259ea02608c8b4cd8d51909cf96363c8b3cdf9a4f90a80197 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_24055fe998c3171259ea02608c8b4cd8d51909cf96363c8b3cdf9a4f90a80197->enter($__internal_24055fe998c3171259ea02608c8b4cd8d51909cf96363c8b3cdf9a4f90a80197_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BackOfficeBundle:Default:stat.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836->leave($__internal_20431bce289c5ea39c0f67f89b5c3a732e0eb1cacb830b6a1fe623e8aba4c836_prof);
+        $__internal_24055fe998c3171259ea02608c8b4cd8d51909cf96363c8b3cdf9a4f90a80197->leave($__internal_24055fe998c3171259ea02608c8b4cd8d51909cf96363c8b3cdf9a4f90a80197_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1->enter($__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7c12535db26fcda099e2edbbdc07181137a893e70022e2ddc38ea06fd64bb374 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7c12535db26fcda099e2edbbdc07181137a893e70022e2ddc38ea06fd64bb374->enter($__internal_7c12535db26fcda099e2edbbdc07181137a893e70022e2ddc38ea06fd64bb374_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "<div id=\"tableau\">
@@ -113,13 +113,13 @@ Nombre d'utilisateur et de kilometre par societe :
 </table>
 </div>
 <div id=\"tableau\">
-Nombre de km par mois et par utilisateur par societe :
+Nombre de km  et par utilisateur par societe :
 <table>
     <thead>
         <tr>
             <th>Societe</th>
             <th>Nom utilisateur</th>
-            <th>nombre de kilometre/utilisateur </th>
+            <th>nombre de kilometre </th>
         </tr>
     </thead>
     <tbody>
@@ -155,7 +155,7 @@ Nombre de km par mois et par utilisateur par societe :
 
 ";
         
-        $__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1->leave($__internal_96d1078717fecda8d1c9414d910ca24764bcf14f8ac44a4864c3066fb22bf8c1_prof);
+        $__internal_7c12535db26fcda099e2edbbdc07181137a893e70022e2ddc38ea06fd64bb374->leave($__internal_7c12535db26fcda099e2edbbdc07181137a893e70022e2ddc38ea06fd64bb374_prof);
 
     }
 
@@ -227,13 +227,13 @@ Nombre d'utilisateur et de kilometre par societe :
 </table>
 </div>
 <div id=\"tableau\">
-Nombre de km par mois et par utilisateur par societe :
+Nombre de km  et par utilisateur par societe :
 <table>
     <thead>
         <tr>
             <th>Societe</th>
             <th>Nom utilisateur</th>
-            <th>nombre de kilometre/utilisateur </th>
+            <th>nombre de kilometre </th>
         </tr>
     </thead>
     <tbody>

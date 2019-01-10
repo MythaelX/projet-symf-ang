@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ListForOneComponent } from './list-for-one/list-for-one.component';
 import { DeplacementDetailsComponent } from './deplacement-details/deplacement-details.component';
+import { FormDeplacementComponent } from './form-deplacement/form-deplacement.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DeplacementDetailsComponent } from './deplacement-details/deplacement-d
     ListComponent,
     NotFoundComponent,
     ListForOneComponent,
-    DeplacementDetailsComponent
+    DeplacementDetailsComponent,
+    FormDeplacementComponent
   ],
   imports: [
     BrowserModule,

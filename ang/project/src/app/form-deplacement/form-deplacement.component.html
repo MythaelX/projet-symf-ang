@@ -1,0 +1,24 @@
+<h2> Formulaire 1 </h2>
+<div id="monform1">
+  <form (ngSubmit)="register()">
+    <div>
+      <label>Nom</label><input name="nom" [(ngModel)]="user.nom" >
+    </div>
+    <div>
+      <label>Prenom</label><input name="prenom" [(ngModel)]="user.prenom">
+    </div>
+    <div >
+      <input type="radio" name="type" value="homme"> Homme<br>
+      <input type="radio" name="type" value="femme"> Femme<br>
+    </div>
+
+    <select name="profession" [(ngModel)]="user.profession">
+      <option value="etudiant">etudiant</option>
+      <option value="prof">prof</option>
+      <option value="vacataire">vacataire</option>
+      <option value="autre">autre</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>

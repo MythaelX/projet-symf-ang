@@ -21,39 +21,41 @@ class __TwigTemplate_6308a3a2c47230b42f8f7d52e5ec6b7ae5580707723a0117af8d292a85b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b51616f776432993a0cf5103b0d8404f41ab0037731f377e126b5b2da77b50dd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b51616f776432993a0cf5103b0d8404f41ab0037731f377e126b5b2da77b50dd->enter($__internal_b51616f776432993a0cf5103b0d8404f41ab0037731f377e126b5b2da77b50dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:profil.html.twig"));
+        $__internal_9c32cc876104f1e326591c9836052dec3e100981d58de498c6a3fe7a97efc23c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9c32cc876104f1e326591c9836052dec3e100981d58de498c6a3fe7a97efc23c->enter($__internal_9c32cc876104f1e326591c9836052dec3e100981d58de498c6a3fe7a97efc23c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FrontOfficeBundle:Default:profil.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b51616f776432993a0cf5103b0d8404f41ab0037731f377e126b5b2da77b50dd->leave($__internal_b51616f776432993a0cf5103b0d8404f41ab0037731f377e126b5b2da77b50dd_prof);
+        $__internal_9c32cc876104f1e326591c9836052dec3e100981d58de498c6a3fe7a97efc23c->leave($__internal_9c32cc876104f1e326591c9836052dec3e100981d58de498c6a3fe7a97efc23c_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_c26ee064aa1b782865a094f1490c31f311002a91780832ecdd6cc95330cae256 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c26ee064aa1b782865a094f1490c31f311002a91780832ecdd6cc95330cae256->enter($__internal_c26ee064aa1b782865a094f1490c31f311002a91780832ecdd6cc95330cae256_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a6edc012132d08ae2f59891da82186a4145470fb4978ed005c9623b84a0a4166 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a6edc012132d08ae2f59891da82186a4145470fb4978ed005c9623b84a0a4166->enter($__internal_a6edc012132d08ae2f59891da82186a4145470fb4978ed005c9623b84a0a4166_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "<h1> formulaire </h1>
+        echo "<div id=\"modifProfil\" >
+<h1> Modifier son profil </h1>
   ";
-        // line 4
+        // line 5
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
   ";
-        // line 5
+        // line 6
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
         echo "
   <input type=\"submit\">
   ";
-        // line 7
+        // line 8
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
+</div>
 ";
         
-        $__internal_c26ee064aa1b782865a094f1490c31f311002a91780832ecdd6cc95330cae256->leave($__internal_c26ee064aa1b782865a094f1490c31f311002a91780832ecdd6cc95330cae256_prof);
+        $__internal_a6edc012132d08ae2f59891da82186a4145470fb4978ed005c9623b84a0a4166->leave($__internal_a6edc012132d08ae2f59891da82186a4145470fb4978ed005c9623b84a0a4166_prof);
 
     }
 
@@ -69,7 +71,7 @@ class __TwigTemplate_6308a3a2c47230b42f8f7d52e5ec6b7ae5580707723a0117af8d292a85b
 
     public function getDebugInfo()
     {
-        return array (  52 => 7,  47 => 5,  43 => 4,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  53 => 8,  48 => 6,  44 => 5,  40 => 3,  34 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -84,11 +86,13 @@ class __TwigTemplate_6308a3a2c47230b42f8f7d52e5ec6b7ae5580707723a0117af8d292a85b
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 {% block body %}
-<h1> formulaire </h1>
+<div id=\"modifProfil\" >
+<h1> Modifier son profil </h1>
   {{form_start(form)}}
   {{form_widget(form)}}
   <input type=\"submit\">
   {{form_end(form)}}
+</div>
 {% endblock %}
 ", "FrontOfficeBundle:Default:profil.html.twig", "/home/clement/cir3/projet 2.0/symf/src/FrontOfficeBundle/Resources/views/Default/profil.html.twig");
     }
