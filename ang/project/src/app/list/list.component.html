@@ -1,6 +1,5 @@
 <br>
 <br>
-
   <tr>
     <th>utilisateur Nom - Prénom</th>
     <th>id déplacement</th>
@@ -13,14 +12,14 @@
   </tr>
   <tr *ngFor = "let line of list">
     <td><a routerLink='/listforone/{{line.id}}' routerLinkActive="active">{{line.nom}} - {{line.prenom}}</a></td>
-    <td>{{line.id}}</td>
+    <td>{{line[0].id}}</td>
     <td>{{line[0].annee}}</td>
     <td>{{line[0].mois | date: 'MMMM'}}</td>
     <td>{{line[0].created.date | date: 'yyyy-MM-dd'}}</td>
     <td>{{line[0].updated.date | date: 'yyyy-MM-dd'}}</td>
     <td>{{line[0].dateValidation.date | date: 'yyyy-MM-dd'}}</td>
     <td>{{line[0].validation}}</td>
-    <td><a routerLink='/deplacementdetails/{{line.id}}/{{line[0].annee}}/{{line[0].mois}}' routerLinkActive="active">détails</a></td>
+    <td><a routerLink='/deplacementdetails/{{line.id}}/{{line[0].annee}}/{{line[0].mois}}/{{line[0].id}}' routerLinkActive="active">détails</a></td>
   </tr>
   <br>
   <br>

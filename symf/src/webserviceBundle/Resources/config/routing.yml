@@ -18,3 +18,9 @@ webservice_getTypeDeplacement:
     path:     /getTypeDeplacement/
     defaults: { _controller: webserviceBundle:Default:getTypeDeplacementRest}
 
+webservice_setDeplacement:
+    path:     /setDeplacement/{month}/{year}
+    defaults: { _controller: webserviceBundle:Default:saveDeplacementRest}
+webservice_setDeplacementJour:
+    path:     /setDeplacementJour/{nbKm}/{montant}/{jour}/{idType}/{idDeplacement}
+    defaults: { _controller: webserviceBundle:Default:saveDeplacementJourRest}

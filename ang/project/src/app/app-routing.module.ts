@@ -13,8 +13,8 @@ const appRoutes: Routes = [
    { path: '', component: AppComponent },
    { path: 'list', component: ListComponent },
    { path: 'formDeplacement', component: FormDeplacementComponent },
-   { path: 'formDeplacementJour', component: FormDeplacementJourComponent },
-   { path: 'deplacementdetails/:userId/:year/:month', component: DeplacementDetailsComponent },
+   { path: 'formDeplacementJour/:deplacementId', component: FormDeplacementJourComponent },
+   { path: 'deplacementdetails/:userId/:year/:month/:deplacementId', component: DeplacementDetailsComponent },
    //{ path: 'recup', component: RecupComponent },
    { path: 'listforone/:id', component: ListForOneComponent },
    { path: '**', component: NotFoundComponent }

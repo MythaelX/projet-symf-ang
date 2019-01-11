@@ -4,16 +4,15 @@
     <div>
       <label>nbKm</label><input name="nbKm" [(ngModel)]="deplacementJour.nbKm" >
     </div>
-    <div>    <div>
-      <label>Type</label><input name="type" [(ngModel)]="deplacementJour.type">
-    </div>
+    <div>
       <label>montant</label><input name="montant" [(ngModel)]="deplacementJour.montant">
     </div>
     <div>
       <label>jour</label><input name="jour" [(ngModel)]="deplacementJour.jour">
     </div>
-    <select *ngFor = "let line of list">
-      <option value="{{line.type}}">{{line.type}}</option>
+    <select *ngFor = "let line of list; index as i" name="profession" [(ngModel)]="deplacementJour.type">
+      <option value="{{i+1}}">{{line.typeDeplacement}}</option>
+
     </select>
     <br>
     <input type="submit" value="Submit">
