@@ -1,15 +1,19 @@
 <?php
 
+/**
+ * BackOffice UserController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * User controller.
- *
- */
 class UserController extends Controller
 {
     /**

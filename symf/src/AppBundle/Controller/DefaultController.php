@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * AppBundle DefaultController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

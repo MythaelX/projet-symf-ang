@@ -1,15 +1,19 @@
 <?php
 
+/**
+ * BackOffice ServiceController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\Service;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Service controller.
- *
- */
 class ServiceController extends Controller
 {
     /**

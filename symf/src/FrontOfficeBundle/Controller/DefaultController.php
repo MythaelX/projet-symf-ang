@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * 
+ * FrontOffice DefaultController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace FrontOfficeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

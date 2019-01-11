@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * 
+ * webservice DefaultController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace webserviceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,6 +25,10 @@ class DefaultController extends Controller
         return $this->render('webserviceBundle:Default:index.html.twig');
     }
 
+    /**
+     * Return all "deplacements".
+     *
+     */
     public function listDeplacementsRestAction(Request $request)
     {
         $response = new Response();
@@ -26,6 +39,10 @@ class DefaultController extends Controller
         return $response;
     }
 
+    /**
+     * Return all "deplacements" for one user "id" passed as a parameter.
+     *
+     */
     public function listDeplacementsForOneUserRestAction(Request $request, $id)
     {
         $response = new Response();
@@ -36,6 +53,10 @@ class DefaultController extends Controller
         return $response;
     }
 
+    /**
+     * Return "prenom" and "nom" for one user "id" passed as a parameter.
+     *
+     */
     public function getUserRestAction(Request $request, $id)
     {
         $response = new Response();
@@ -46,6 +67,10 @@ class DefaultController extends Controller
         return $response;
     }
 
+    /**
+     * Return details ("deplacement_jour") for one "deplacement" (id of the "user", year and month) passed as a parameter .
+     *
+     */
     public function getDeplacementDetailsRestAction(Request $request, $userId, $year, $month)
     {
         $response = new Response();
@@ -56,6 +81,10 @@ class DefaultController extends Controller
         return $response;
     }
 
+    /**
+     * Return all "type_deplacement".
+     *
+     */
     public function getTypeDeplacementRestAction(Request $request)
     {
         $response = new Response();

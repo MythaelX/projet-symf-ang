@@ -1,15 +1,19 @@
 <?php
 
+/**
+ * BackOffice TypeDeplacementController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\TypeDeplacement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Typedeplacement controller.
- *
- */
 class TypeDeplacementController extends Controller
 {
     /**

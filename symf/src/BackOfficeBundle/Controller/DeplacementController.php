@@ -1,15 +1,19 @@
 <?php
 
+/**
+ * BackOffice DeplacementController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\Deplacement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Deplacement controller.
- *
- */
 class DeplacementController extends Controller
 {
     /**

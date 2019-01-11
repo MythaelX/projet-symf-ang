@@ -1,15 +1,19 @@
 <?php
 
+/**
+ * BackOffice TypeUserController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\TypeUser;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Typeuser controller.
- *
- */
 class TypeUserController extends Controller
 {
     /**

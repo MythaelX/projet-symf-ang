@@ -7,6 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TypeUser
  *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
  * @ORM\Table(name="type_user")
  * @ORM\Entity(repositoryClass="BackOfficeBundle\Repository\Type_userRepository")
  */

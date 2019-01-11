@@ -7,6 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Service
  *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
  * @ORM\Table(name="service")
  * @ORM\Entity(repositoryClass="BackOfficeBundle\Repository\ServiceRepository")
  */

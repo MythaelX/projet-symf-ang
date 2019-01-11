@@ -1,4 +1,11 @@
 <?php
+/**
+ * BackOffice UserController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
 
 namespace BackOfficeBundle\Controller;
 
@@ -6,10 +13,6 @@ use BackOfficeBundle\Entity\Ville;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Ville controller.
- *
- */
 class VilleController extends Controller
 {
     /**

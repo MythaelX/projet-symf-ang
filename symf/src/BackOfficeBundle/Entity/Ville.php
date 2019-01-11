@@ -7,6 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Ville
  *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
  * @ORM\Table(name="ville")
  * @ORM\Entity(repositoryClass="BackOfficeBundle\Repository\VilleRepository")
  */

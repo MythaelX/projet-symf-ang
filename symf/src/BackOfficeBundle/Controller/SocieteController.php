@@ -1,15 +1,18 @@
 <?php
 
+/**
+ * BackOffice SocieteController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\Societe;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Societe controller.
- *
- */
 class SocieteController extends Controller
 {
     /**

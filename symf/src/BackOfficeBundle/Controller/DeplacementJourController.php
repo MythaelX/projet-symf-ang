@@ -1,15 +1,19 @@
 <?php
 
+/**
+ * BackOffice DeplacementJourController
+ *
+ * @author Adrien LEBOURGEOIS - Clément EVEN
+ * @version 3.1
+ * 
+ */
+
 namespace BackOfficeBundle\Controller;
 
 use BackOfficeBundle\Entity\DeplacementJour;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Deplacementjour controller.
- *
- */
 class DeplacementJourController extends Controller
 {
     /**
