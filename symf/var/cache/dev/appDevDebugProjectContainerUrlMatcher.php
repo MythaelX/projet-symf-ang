@@ -137,6 +137,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+            if (0 === strpos($pathinfo, '/api/setDeplacement')) {
+                // webservice_setDeplacement
+                if (preg_match('#^/api/setDeplacement/(?P<month>[^/]++)/(?P<year>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'webservice_setDeplacement')), array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::saveDeplacementRestAction',));
+                }
+
+                // webservice_setDeplacementJour
+                if (0 === strpos($pathinfo, '/api/setDeplacementJour') && preg_match('#^/api/setDeplacementJour/(?P<nbKm>[^/]++)/(?P<montant>[^/]++)/(?P<jour>[^/]++)/(?P<idType>[^/]++)/(?P<idDeplacement>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'webservice_setDeplacementJour')), array (  '_controller' => 'webserviceBundle\\Controller\\DefaultController::saveDeplacementJourRestAction',));
+                }
+
+            }
+
         }
 
         // front_office_homepage

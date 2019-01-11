@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Deplacement} from '../util/Deplacement.ts';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Router } from '@angular/router';
+import {Deplacement} from '../util/Deplacement';
+
+
 
 @Component({
   selector: 'app-form-deplacement',
@@ -9,14 +13,23 @@ import {Deplacement} from '../util/Deplacement.ts';
 export class FormDeplacementComponent implements OnInit {
 
   deplacement: Deplacement;
-  constructor() { }
+  constructor(private httpClient: HttpClient,private router: Router) { }
 
   ngOnInit() {
     this.deplacement=new Deplacement(0,0);
   }
 
   register() {
-    console.log(this.deplacement)
-    //this.httpClient.post('http://127.0.0.1:8000/api/', this.deplacement).subscribe();
+    console.log(this.deplacement);
+    return this.httpClient.get('http://127.0.0.1:8000/api/setDeplacement/'+this.deplacement.getMois()+'/'+this.deplacement.getAnnee(), {responseType: 'json'}).subscribe(
+       (response) => {
+         console.log('ok');
+         alert("Deplacement créé");
+         this.router.navigate(['list'])
+       },
+       (error) => {console.log('Erreur ! : ' + error);
+       }
+     );
    }
+
 }

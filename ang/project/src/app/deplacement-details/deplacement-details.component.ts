@@ -12,9 +12,9 @@ import { isNull } from 'util';
 export class DeplacementDetailsComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private route: ActivatedRoute){}
-  
+
   list: any;
-  
+  deplacementId: string;
   ngOnInit() {
     this.httpClient.get('http://127.0.0.1:8000/api/getdeplacementdetails/' + this.route.snapshot.paramMap.get('userId') + '/' + this.route.snapshot.paramMap.get('year') + '/' + this.route.snapshot.paramMap.get('month'), {responseType: 'json'}).subscribe(
       (response) => {
@@ -23,6 +23,7 @@ export class DeplacementDetailsComponent implements OnInit {
       (error) => {console.log('Erreur ! : ' + error);
       }
     );
+    this.deplacementId=this.route.snapshot.paramMap.get('deplacementId');
   }
 
   responseSanitizer(list: any){
